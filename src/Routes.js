@@ -21,7 +21,10 @@ import RegularTables1 from './example-pages/RegularTables1';
 import RegularTables4 from './example-pages/RegularTables4';
 import FormsLayout from './example-pages/FormsLayout';
 import FormsControls from './example-pages/FormsControls';
-import Profile from './layout-components/profile';
+import login from './pages/Login';
+import ForgetPassword from './pages/Forget-password';
+import ResetPassword from './pages/Reset-password';
+import Welcome from './pages/Welcome';
 
 const DashboardDefault = lazy(() => import('./example-pages/DashboardDefault'));
 const Cards3 = lazy(() => import('./example-pages/Cards3'));
@@ -72,7 +75,8 @@ const Routes = () => {
         }>
         <Switch>
           <Redirect exact from="/" to="/LandingPage" />
-          <Route path={['/LandingPage']}>
+          <Route path={['/LandingPage',
+              '/login', '/forget-password', '/reset', '/welcome']}>
             <PresentationLayout>
               <Switch location={location} key={location.pathname}>
                 <motion.div
@@ -86,6 +90,10 @@ const Routes = () => {
 
               </Switch>
             </PresentationLayout>
+            <Route path="/login" component={login} />
+            <Route path="/forget-password" component={ForgetPassword} />
+            <Route path="/reset" component={ResetPassword} />
+            <Route path="/welcome" component={Welcome} />
           </Route>
 
           <Route
@@ -113,8 +121,7 @@ const Routes = () => {
               '/FormsLayout',
               '/FormsControls',
               '/ApexCharts',
-              '/Maps',
-              '/Profile'
+              '/Maps'
             ]}>
             <LeftSidebar>
               <Switch location={location} key={location.pathname}>
@@ -154,7 +161,7 @@ const Routes = () => {
                   <Route path="/FormsControls" component={FormsControls} />
                   <Route path="/ApexCharts" component={ApexCharts} />
                   <Route path="/Maps" component={Maps} />
-                  <Route path="/Profile" component={Profile} />
+                  
                 </motion.div>
               </Switch>
             </LeftSidebar>

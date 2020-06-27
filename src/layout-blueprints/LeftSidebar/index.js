@@ -37,4 +37,4 @@ const mapStateToProps = state => ({
   sidebarToggleMobile: state.ThemeOptions.sidebarToggleMobile
 });
 
-export default connect(mapStateToProps)(LeftSidebar);
+export default connect(mapStateToProps,null)(LeftSidebar);

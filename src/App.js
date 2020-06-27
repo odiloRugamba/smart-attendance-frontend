@@ -4,6 +4,7 @@ import configureStore from './config/configureStore';
 import { Provider } from 'react-redux';
 import Routes from './Routes';
 import store from './store/store'
+import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import ScrollToTop from './utils/ScrollToTop';
 import './assets/base.scss';

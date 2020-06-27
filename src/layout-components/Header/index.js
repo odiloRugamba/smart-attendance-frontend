@@ -2,11 +2,10 @@ import React, { Fragment, Component } from 'react';
 
 import clsx from 'clsx';
 
-import { Button } from 'reactstrap';
 
 import { connect } from 'react-redux';
 
-import { setSidebarToggleMobile } from '../../reducers/ThemeOptions';
+import { setSidebarToggleMobile } from '../../reducers/Theme/ThemeOptions';
 
 import HeaderUserbox from '../../layout-components/HeaderUserbox';
 
@@ -32,24 +31,6 @@ class Header extends Component {
                 <span className="hamburger-inner" />
               </span>
             </button>
-            <Button
-              tag="a"
-              href="https://uifort.com/template/bamburgh-react-admin-dashboard-reactstrap-free"
-              target="_blank"
-              size="sm"
-              color="neutral-success"
-              className="ml-3 mr-3 btn-transition-none">
-              Download now
-            </Button>
-            <Button
-              tag="a"
-              href="https://uifort.com/template/bamburgh-react-admin-dashboard-reactstrap-pro"
-              target="_blank"
-              size="sm"
-              color="neutral-warning"
-              className="transition-none">
-              View PRO Version
-            </Button>
           </div>
           <div className="app-header--pane">
             <HeaderUserbox />

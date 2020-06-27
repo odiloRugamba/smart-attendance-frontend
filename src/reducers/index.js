@@ -1,5 +1,14 @@
-import ThemeOptions from './ThemeOptions';
+import { combineReducers } from 'redux';
+import loginReducer from './Authentication/LoginReducer';
+import SignupReducer from './Authentication/SignupReducer'
+import ThemeOptions from './Theme/ThemeOptions';
+import ForgotPasswordReducer from './Authentication/ForgotPassword'
 
-export default {
-  ThemeOptions
-};
+const  rootReducer = combineReducers({
+  user: loginReducer,
+  SignupReducer,
+  ThemeOptions,
+  ForgotPasswordReducer,
+});
+
+export default rootReducer;
