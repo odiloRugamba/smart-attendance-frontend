@@ -8,13 +8,13 @@ import { LeftSidebar, PresentationLayout } from './layout-blueprints';
 
 // Example Pages
 
-import Buttons from './example-pages/Buttons';
-import Dropdowns from './example-pages/Dropdowns';
+import AddStaff from './example-pages/Add-staff';
+import AllStaffs from './example-pages/All-staff';
 import NavigationMenus from './example-pages/NavigationMenus';
 import ProgressBars from './example-pages/ProgressBars';
 import Pagination from './example-pages/Pagination';
 import Scrollable from './example-pages/Scrollable';
-import Badges from './example-pages/Badges';
+import AllStudents from './example-pages/All-students';
 import Icons from './example-pages/Icons';
 import UtilitiesHelpers from './example-pages/UtilitiesHelpers';
 import RegularTables1 from './example-pages/RegularTables1';
@@ -27,8 +27,8 @@ import ResetPassword from './pages/Reset-password';
 import Welcome from './pages/Welcome';
 
 const DashboardDefault = lazy(() => import('./example-pages/DashboardDefault'));
-const Cards3 = lazy(() => import('./example-pages/Cards3'));
-const ListGroups = lazy(() => import('./example-pages/ListGroups'));
+const AddStudent = lazy(() => import('./example-pages/Add-student'));
+const Profile = lazy(() => import('./example-pages/Profile'));
 const LandingPage = lazy(() => import('./example-pages/LandingPage'));
 const Modals = lazy(() => import('./example-pages/Modals'));
 const Notifications = lazy(() => import('./example-pages/Notifications'));
@@ -99,17 +99,17 @@ const Routes = () => {
           <Route
             path={[
               '/DashboardDefault',
-              '/Buttons',
-              '/Dropdowns',
+              '/add-staff',
+              '/AllStaffs',
               '/NavigationMenus',
               '/ProgressBars',
               '/Pagination',
               '/Scrollable',
-              '/Badges',
+              '/All-students',
               '/Icons',
               '/UtilitiesHelpers',
-              '/Cards3',
-              '/ListGroups',
+              '/add-student',
+              '/Profile',
               '/Modals',
               '/Notifications',
               '/Carousels',
@@ -135,20 +135,20 @@ const Routes = () => {
                     path="/DashboardDefault"
                     component={DashboardDefault}
                   />
-                  <Route path="/Buttons" component={Buttons} />
-                  <Route path="/Dropdowns" component={Dropdowns} />
+                  <Route path="/add-staff" component={AddStaff} />
+                  <Route path="/AllStaffs" component={AllStaffs} />
                   <Route path="/NavigationMenus" component={NavigationMenus} />
                   <Route path="/ProgressBars" component={ProgressBars} />
                   <Route path="/Pagination" component={Pagination} />
                   <Route path="/Scrollable" component={Scrollable} />
-                  <Route path="/Badges" component={Badges} />
+                  <Route path="/All-students" component={AllStudents} />
                   <Route path="/Icons" component={Icons} />
                   <Route
                     path="/UtilitiesHelpers"
                     component={UtilitiesHelpers}
                   />
-                  <Route path="/Cards3" component={Cards3} />
-                  <Route path="/ListGroups" component={ListGroups} />
+                  <Route path="/add-student" component={AddStudent} />
+                  <Route path="/Profile" component={Profile} />
                   <Route path="/Modals" component={Modals} />
                   <Route path="/Notifications" component={Notifications} />
                   <Route path="/Carousels" component={Carousels} />
