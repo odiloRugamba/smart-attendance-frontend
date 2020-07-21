@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import qs from 'qs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { toast } from 'react-toastify';
-import { Link, NavLink} from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import { ResetPasswordAction } from '../../actions/Authentication/ForgetPassword';
-import { Col,FormGroup, Input , Button } from 'reactstrap';
+import { Col,Button } from 'reactstrap';
 
 
      function ResetPassword(props) {

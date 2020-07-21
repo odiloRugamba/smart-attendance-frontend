@@ -1,8 +1,10 @@
 import jwtDecode from 'jwt-decode';
 import { toast } from 'react-toastify';
+import history from '../../utils/helpers/history';
 import { LOGIN_SUCCESS, LOGIN_FAILURE, SET_CURRENT_USER } from '../actionTypes';
 import  HttpService  from '../../utils/HttpService';
 import creator from '../creator';
+import { DashboardDefault } from 'example-pages';
 
 export const loginAction = (data) => async (dispatch) => {
   try {
@@ -13,7 +15,7 @@ export const loginAction = (data) => async (dispatch) => {
       password,
     });
     
-    localStorage.setItem('golden_token', response.data.token);
+    localStorage.setItem('smartgate_token', response.data.token);
     const info = jwtDecode(response.data.token)
     console.log(info);
     
@@ -22,7 +24,8 @@ export const loginAction = (data) => async (dispatch) => {
     toast.success(`${response.message}`, {
       position: toast.POSITION.TOP_CENTER
     });
-    window.location.replace("/");
+    history.push('/dashboard');
+     //window.location.replace("/DashboardDefault");
   } catch (error) {
       if(error.response.data.message.error){
         toast.error(`${error.response.data.message.error}`, {

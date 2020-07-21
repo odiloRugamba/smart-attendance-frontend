@@ -18,36 +18,7 @@ export default function LivePreviewExample() {
                   
                         <div className="text-uppercase font-weight-bold text-primary pt-4 font-size-sm">User registration Form</div>
                         <div className="py-4">
-                            <Row>
-                                <Col md="6">
-                                    <FormGroup>
-                                        <Label className="font-weight-bold" for="">First Name</Label>
-                                        <Input type="text" name="" id="" placeholder="First name..." />
-                                    </FormGroup>
-                                    <Label className="font-weight-bold" for="">Email</Label>
-                                    <Row>
-                                        <Col md="12">
-                                            <FormGroup>
-                                                <Input type="text" name="" id="" placeholder="Day..." />
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                </Col>
-                                <Col md="6">
-                                    <FormGroup>
-                                        <Label className="font-weight-bold" for="">Last Name</Label>
-                                        <Input type="text" name="" id="" placeholder="Last name ..." />
-                                    </FormGroup>
-                                    <Label className="font-weight-bold" for="">Mobile phone</Label>
-                                    <Row>
-                                        <Col md="12">
-                                            <FormGroup>
-                                                <Input type="text" name="" id="" placeholder="Number..." />
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                </Col>
-                            </Row>
+              
                             <Row>
                                 <Col md="6">
                                     <Label className="font-weight-bold" for="">Role</Label>

@@ -3,7 +3,7 @@ import { LOGIN_SUCCESS, LOGIN_FAILURE } from '../../actions/actionTypes';
 const INITIAL_STATE = {
   isLoading: false,
   user: {},
-  isLoggedIn: false,
+  isAuthenticated : false,
   error: null,
 };
 
@@ -15,14 +15,14 @@ const LoginReducer = (state = INITIAL_STATE, {type, payload}) => {
         ...state,
         isLoading: true,
         user: payload.data,
-        isLoggedIn: true,
+        isAuthenticated : true,
         error: null,
       };
     case LOGIN_FAILURE:
       return {
         user: {},
         isLoading: false,
-        isLoggedIn: false,
+        isAuthenticated : false,
       };
     default:
       return state;

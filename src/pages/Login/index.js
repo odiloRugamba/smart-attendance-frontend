@@ -14,6 +14,8 @@ function Login(props) {
          const { UserLogin } = props;
          await  UserLogin({email, password})
         }
+        console.log(props.isAuthenticated.user.role);
+        
     return (
         <>
             <div className="app-wrapper bg-white min-vh-100">
@@ -69,7 +71,12 @@ function Login(props) {
         </>
     );
 }
+const mapStateToProps = state => {
+    return {
+        isAuthenticated: state.auth
+    }
+}
 
-export default connect(null, {
+export default connect(mapStateToProps, {
     UserLogin: loginAction
 })(Login);

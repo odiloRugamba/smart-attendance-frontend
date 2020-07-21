@@ -16,6 +16,18 @@ const sidebarMenuContent = [
 
   },
   {
+    label: 'School Management',
+    icon: 'pe-7s-keypad',
+    content: [
+      {
+        label: 'Add school',
+        description:
+          'With this page you can manage schools related issues!',
+        to: '/add-school'
+      }
+    ]
+  },
+  {
     label: 'Manage staff',
     icon: 'pe-7s-keypad',
     content: [

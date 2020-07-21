@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import configureStore from './config/configureStore';
 import { Provider } from 'react-redux';
 import Routes from './Routes';
 import store from './store/store'
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
 import ScrollToTop from './utils/ScrollToTop';
+import history from './utils/helpers/history'
 import './assets/base.scss';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -259,7 +259,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <BrowserRouter basename="/bamburgh-react-admin-dashboard-reactstrap-free/">
+        <BrowserRouter history={history}>
           <ScrollToTop>
             <Routes />
           </ScrollToTop>

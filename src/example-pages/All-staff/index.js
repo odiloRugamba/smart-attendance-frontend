@@ -1,10 +1,9 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import { Table, Card, Button,  } from 'reactstrap';
 import { PageTitle } from '../../layout-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { ExampleWrapperSimple } from '../../layout-components';
 
 export default function LivePreviewExample() {
   return (

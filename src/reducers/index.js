@@ -5,7 +5,7 @@ import ThemeOptions from './Theme/ThemeOptions';
 import ForgotPasswordReducer from './Authentication/ForgotPassword'
 
 const  rootReducer = combineReducers({
-  user: loginReducer,
+  auth: loginReducer,
   SignupReducer,
   ThemeOptions,
   ForgotPasswordReducer,

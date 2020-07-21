@@ -67,20 +67,18 @@ const LandingPage = () => {
                           size="lg"
                           color="warning"
                           className="d-block d-sm-inline-block ml-0 mt-3 mt-sm-0 ml-sm-3"
-                          href="https://uifort.com/template/bamburgh-react-admin-dashboard-reactstrap-free"
-                          target="_blank"
+                          href="/login"
                           title="Download Bamburgh React Admin Dashboard with Reactstrap Free">
                           <span className="btn-wrapper--icon">
-                            <FontAwesomeIcon icon={['fas', 'download']} />
+                            <FontAwesomeIcon icon={['fas', 'sign']} />
                           </span>
                           <span className="btn-wrapper--label">
-                            Download now
+                            Login
                           </span>
                         </Button>
                         <Button
                           tag="a"
-                          href="https://uifort.com/template/bamburgh-react-admin-dashboard-reactstrap-pro"
-                          target="_blank"
+                          href="/DashboardDefault"
                           size="lg"
                           color="first"
                           className="d-block d-sm-inline-block ml-0 ml-sm-3 mt-3 mt-sm-0"
@@ -91,7 +89,7 @@ const LandingPage = () => {
                             />
                           </span>
                           <span className="btn-wrapper--label">
-                            PRO Version
+                            Dashboard
                           </span>
                         </Button>
                       </div>

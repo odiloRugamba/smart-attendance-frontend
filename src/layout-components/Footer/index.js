@@ -10,27 +10,27 @@ function Footer() {
           <Nav>
             <NavItem>
               <NavLink
-                href="https://uifort.com/template/bamburgh-react-admin-dashboard-reactstrap-free"
+                href="#/"
                 className="rounded-sm"
-                target="_blank">
-                Download now
+                >
+                Dashboard
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
-                href="https://uifort.com/template/bamburgh-react-admin-dashboard-reactstrap-pro"
+                href="#/"
                 className="rounded-sm"
-                target="_blank">
-                View PRO Version
+                >
+                Settings
               </NavLink>
             </NavItem>
           </Nav>
         </div>
         <div className="app-footer--second">
-          <span>Bamburgh React Admin Dashboard with Reactstrap Free</span> ©
+          <span>Smart Project</span> ©
           2020 - crafted with <span className="text-danger px-1">❤</span> by{' '}
-          <a href="https://uifort.com" target="_blank" title="UiFort.com">
-            UiFort.com
+          <a href="#"  title="Emmy Karangwa $ Odilo Rugamba">
+           Smart Project
           </a>
         </div>
       </div>

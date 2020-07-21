@@ -1,23 +1,22 @@
 import React, { Fragment, Component } from 'react';
-
+import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import {
   ListGroup,
   ListGroupItem,
-  UncontrolledTooltip,
   Nav,
   NavItem,
   NavLink,
-  Button,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu
 } from 'reactstrap';
 
-import avatar5 from '../../assets/images/avatars/avatar5.jpg';
-export default class HeaderUserbox extends Component {
-  render() {
+import avatar5 from '../../assets/images/avatars/odilo.png';
+
+ function HeaderUserbox(props){
+    console.log(props);
     return (
       <Fragment>
         <UncontrolledDropdown className="user-box position-relative ml-2">
@@ -28,8 +27,8 @@ export default class HeaderUserbox extends Component {
               <img src={avatar5} className="img-fluid" alt="..." />
             </div>
             <div className="d-none d-xl-block pl-2">
-              <div className="font-weight-bold">Ryan Kent</div>
-              <span className="text-black-50">Senior accountant</span>
+              <div className="font-weight-bold">Odilo Rugamba</div>
+              <span className="text-black-50">{props.loggedUser.user.role}</span>
             </div>
             <span className="pl-1 pl-xl-3">
               <FontAwesomeIcon
@@ -57,28 +56,23 @@ export default class HeaderUserbox extends Component {
                       Active tasks
                     </NavLink>
                   </NavItem>
+                  <NavItem>
+                    <NavLink href="#/" onClick={e => e.preventDefault()}>
+                      Logout
+                    </NavLink>
+                  </NavItem>
                 </Nav>
-              </ListGroupItem>
-              <ListGroupItem className="rounded-bottom p-3 text-center">
-                <Button
-                  tag="a"
-                  href="#/"
-                  onClick={e => e.preventDefault()}
-                  color="twitter"
-                  id="btnTwitterTooltipHeader"
-                  container="body">
-                  <span className="btn-wrapper--icon">
-                    <FontAwesomeIcon icon={['fab', 'twitter']} />
-                  </span>
-                </Button>
-                <UncontrolledTooltip target="btnTwitterTooltipHeader">
-                  Twitter
-                </UncontrolledTooltip>
               </ListGroupItem>
             </ListGroup>
           </DropdownMenu>
         </UncontrolledDropdown>
       </Fragment>
     );
+
+}
+const mapStateToProps = state => {
+  return {
+      loggedUser: state.auth
   }
 }
+export default connect(mapStateToProps)(HeaderUserbox);

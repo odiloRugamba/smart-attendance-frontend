@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Switch, Route, Redirect, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
+import PrivateRoute  from './utils/PrivateRoute'
 
 // Layout Blueprints
 
@@ -30,9 +31,8 @@ const DashboardDefault = lazy(() => import('./example-pages/DashboardDefault'));
 const AddStudent = lazy(() => import('./example-pages/Add-student'));
 const Profile = lazy(() => import('./example-pages/Profile'));
 const LandingPage = lazy(() => import('./example-pages/LandingPage'));
-const Modals = lazy(() => import('./example-pages/Modals'));
-const Notifications = lazy(() => import('./example-pages/Notifications'));
-const Carousels = lazy(() => import('./example-pages/Carousels'));
+const AddSchool = lazy(() => import('./example-pages/Add-school'));
+const updateSchool = lazy(() => import('./example-pages/School/Update-school'));
 const Popovers = lazy(() => import('./example-pages/Popovers'));
 const Tooltips = lazy(() => import('./example-pages/Tooltips'));
 const Tabs = lazy(() => import('./example-pages/Tabs'));
@@ -101,27 +101,14 @@ const Routes = () => {
               '/DashboardDefault',
               '/add-staff',
               '/AllStaffs',
-              '/NavigationMenus',
-              '/ProgressBars',
+              '/add-school',
               '/Pagination',
               '/Scrollable',
               '/All-students',
-              '/Icons',
+              '/update-school',
               '/UtilitiesHelpers',
               '/add-student',
-              '/Profile',
-              '/Modals',
-              '/Notifications',
-              '/Carousels',
-              '/Popovers',
-              '/Tooltips',
-              '/Tabs',
-              '/RegularTables1',
-              '/RegularTables4',
-              '/FormsLayout',
-              '/FormsControls',
-              '/ApexCharts',
-              '/Maps'
+              '/Profile'
             ]}>
             <LeftSidebar>
               <Switch location={location} key={location.pathname}>
@@ -131,7 +118,7 @@ const Routes = () => {
                   exit="out"
                   variants={pageVariants}
                   transition={pageTransition}>
-                  <Route
+                  <PrivateRoute
                     path="/DashboardDefault"
                     component={DashboardDefault}
                   />
@@ -149,9 +136,8 @@ const Routes = () => {
                   />
                   <Route path="/add-student" component={AddStudent} />
                   <Route path="/Profile" component={Profile} />
-                  <Route path="/Modals" component={Modals} />
-                  <Route path="/Notifications" component={Notifications} />
-                  <Route path="/Carousels" component={Carousels} />
+                  <Route path="/add-school" component={AddSchool} />
+                  <Route path="/update-school" component={updateSchool} />
                   <Route path="/Popovers" component={Popovers} />
                   <Route path="/Tooltips" component={Tooltips} />
                   <Route path="/Tabs" component={Tabs} />

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux'
 import { AvForm, AvField } from 'availity-reactstrap-validation';
-import { Col,FormGroup, Row , Button } from 'reactstrap';
+import { Col,Row , Button } from 'reactstrap';
 import { ForgetPasswordAction } from '../../actions/Authentication/ForgetPassword'
 
 function ForgetPassword(props) {

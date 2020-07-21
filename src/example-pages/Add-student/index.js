@@ -1,9 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import { Row, Col, FormGroup, Input, Button, Label, Container } from 'reactstrap';
 import { PageTitle } from '../../layout-components';
 
-import { ExampleWrapperSimple } from '../../layout-components';
 
 export default function LivePreviewExample() {
   return (
