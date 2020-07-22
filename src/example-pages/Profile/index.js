@@ -2,16 +2,15 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Row, Col, Card, Input, Button, Nav, NavItem, NavLink, Container, CardHeader,ListGroupItem, TabPane, TabContent, Badge, ListGroup } from 'reactstrap';
 import clsx from 'classnames';
-import PerfectScrollbar from 'react-perfect-scrollbar';
-import {useDropzone} from 'react-dropzone';
-import CountUp from 'react-countup';
+import PerfectScrollbar from 'react-perfect-scrollbar';import Dropzone, {useDropzone} from 'react-dropzone';import CountUp from 'react-countup';
 import hero1 from '../../assets/images/hero-bg/hero-8.jpg';
 import stock3 from '../../assets/images/stock-photos/stock-2.jpg';
+import stock4 from '../../assets/images/stock-photos/stock-1.jpg';
 
-import stock1 from '../../assets/images/stock-photos/stock-3.jpg';
+import stock1 from '../../assets/images/stock-photos/stock-2.jpg';
 import stock2 from '../../assets/images/stock-photos/stock-1.jpg';
 
-import { Upload, Check, X, User } from 'react-feather';
+import { Upload, Check, X, User, Edit2 } from 'react-feather';
 import {useEffect} from 'react';
 
 import people1 from '../../assets/images/stock-photos/people-1.jpg';
@@ -156,7 +155,7 @@ export default function LivePreviewExample() {
                                                 </div>
                                             </div>
                                             <div className="font-size-lg">
-                                                This admin template is a complete frontend solution for easy-building applications or presentation websites. It&#39;s fully responsive and designed by professional UI&#x2F;UX designers and developers.
+                                                Regardless of the product type you&#39;re building, use this template to build your product if it is the closest to your needs. Together with the General interchangeable components you will be able to create any layout you need.
                                             </div>
                                         </div>
                                     </div>
@@ -169,7 +168,7 @@ export default function LivePreviewExample() {
                                                         toggle2('1');
                                                     }}
                                                 >
-                                                    <span className="font-size-lg text-white px-2 py-1">Profile</span>
+                                                    <span className="font-size-lg text-white px-2 py-1">Dashboard</span>
                                                     <div className="divider"/>
                                                 </NavLink>
                                             </NavItem>
@@ -180,7 +179,7 @@ export default function LivePreviewExample() {
                                                         toggle2('4');
                                                     }}
                                                 >
-                                                    <span className="font-size-lg text-white px-2 py-1">Change Email</span>
+                                                    <span className="font-size-lg text-white px-2 py-1">Recent Posts</span>
                                                     <div className="divider"/>
                                                 </NavLink>
                                             </NavItem>
@@ -191,7 +190,18 @@ export default function LivePreviewExample() {
                                                         toggle2('3');
                                                     }}
                                                 >
-                                                    <span className="font-size-lg text-white px-2 py-1">Change Password</span>
+                                                    <span className="font-size-lg text-white px-2 py-1">Timeline</span>
+                                                    <div className="divider"/>
+                                                </NavLink>
+                                            </NavItem>
+                                            <NavItem className="px-3">
+                                                <NavLink
+                                                    className={clsx("bg-white-10 m-3 m-lg-0 rounded-lg", {active: activeTab2 === '2'})}
+                                                    onClick={() => {
+                                                        toggle2('2');
+                                                    }}
+                                                >
+                                                    <span className="font-size-lg text-white px-2 py-1">Friends</span>
                                                     <div className="divider"/>
                                                 </NavLink>
                                             </NavItem>
@@ -532,9 +542,9 @@ export default function LivePreviewExample() {
                                                         </div>
                                                         <div className="card-footer p-3 text-center">
                                                             <Button size="sm" className="py-2 px-4" color="primary">
-                                                            <span className="btn-wrapper--label text-uppercase font-weight-bold">
-                                                                View all activity
-                                                            </span>
+                    <span className="btn-wrapper--label text-uppercase font-weight-bold">
+                        View all activity
+                    </span>
                                                             </Button>
                                                         </div>
                                                     </TabPane>
@@ -1258,8 +1268,8 @@ export default function LivePreviewExample() {
                                                 <div className="card-img-wrapper rounded">
                                                     <a href="#/" onClick={e => e.preventDefault()} className="img-wrapper-overlay p-4 p-xl-5 img-wrapper-overlay--visible rounded">
                                                         <div className="overlay-btn-wrapper card-body text-white text-center">
-                                                            <h5 className="px-2 font-weight-bold display-4 mb-4">Bamburgh React Admin Dashboard with Reactstrap PRO</h5>
-                                                            <p className="font-size-lg text-white-50 mb-0">This admin template is a complete frontend solution for easy-building applications or presentation websites. It&#39;s fully responsive and designed by professional UI&#x2F;UX designers and developers.</p>
+                                                            <h5 className="px-2 font-weight-bold display-4 mb-4">Bamburgh React Messenger Application with Reactstrap PRO</h5>
+                                                            <p className="font-size-lg text-white-50 mb-0">Regardless of the product type you&#39;re building, use this template to build your product if it is the closest to your needs. Together with the General interchangeable components you will be able to create any layout you need.</p>
                                                             <div className="mt-4">
                                                                 <div className="avatar-icon-wrapper mx-auto mb-2">
                                                                     <div className="avatar-icon shadow-sm-dark"><img alt="..." src={avatar6} /></div>
@@ -1278,10 +1288,10 @@ export default function LivePreviewExample() {
                                                 <div className="card-img-wrapper rounded">
                                                     <a href="#/" onClick={e => e.preventDefault()} className="p-4 p-lg-5 img-wrapper-overlay img-wrapper-overlay--visible shadow-none rounded">
                                                         <div className="overlay-btn-wrapper d-block p-3 p-lg-5 text-left text-white">
-                                                            <h5 className="font-weight-bold display-3 mb-3">Bamburgh React Admin Dashboard with Reactstrap PRO</h5>
-                                                            <p className="font-size-lg mb-3">350+ custom-made, beautiful components, widgets, pages, dashboards and applications.</p>
-                                                            <p className="font-size-md text-white-50">This admin template is a complete frontend solution for easy-building applications or presentation websites. It&#39;s fully responsive and designed by professional UI&#x2F;UX designers and developers.</p>
-                                                            <p className="font-size-md text-white-50">Browse through the live previews to see just how powerful this admin template really is!</p>
+                                                            <h5 className="font-weight-bold display-3 mb-3">Bamburgh React Messenger Application with Reactstrap PRO</h5>
+                                                            <p className="font-size-lg mb-3">Fully coded, perfectly responsive on all screen sizes. Start working on your project today!</p>
+                                                            <p className="font-size-md text-white-50">Regardless of the product type you&#39;re building, use this template to build your product if it is the closest to your needs. Together with the General interchangeable components you will be able to create any layout you need.</p>
+                                                            <p className="font-size-md text-white-50">All components from the General dashboard template can be used in the individual applications pages, without modifications.</p>
 
                                                             <div className="divider bg-white opacity-1 my-4" />
                                                             <div className="d-flex justify-content-between">
@@ -1313,8 +1323,8 @@ export default function LivePreviewExample() {
                                                 <div className="card-img-wrapper rounded">
                                                     <div className="img-wrapper-overlay align-items-end img-wrapper-overlay--visible p-4 p-xl-5">
                                                         <div className="overlay-btn-wrapper p-4 card-body text-white">
-                                                            <h5 className="px-2 font-weight-bold display-4 mb-4">Bamburgh React Admin Dashboard with Reactstrap PRO</h5>
-                                                            <p className="font-size-lg mb-0 text-white-50">This admin template is a complete frontend solution for easy-building applications or presentation websites. It&#39;s fully responsive and designed by professional UI&#x2F;UX designers and developers.</p>
+                                                            <h5 className="px-2 font-weight-bold display-4 mb-4">Bamburgh React Messenger Application with Reactstrap PRO</h5>
+                                                            <p className="font-size-lg mb-0 text-white-50">Regardless of the product type you&#39;re building, use this template to build your product if it is the closest to your needs. Together with the General interchangeable components you will be able to create any layout you need.</p>
                                                             <div className="mt-4">
                                                                 <div className="avatar-icon-wrapper mx-auto mb-2">
                                                                     <div className="avatar-icon shadow-sm-dark"><img alt="..." src={avatar7} /></div>
@@ -1346,9 +1356,9 @@ export default function LivePreviewExample() {
 
                                                             <div className="divider bg-white opacity-2 my-3 my-lg-5" />
 
-                                                            <h5 className="font-weight-bold display-3">Bamburgh React Admin Dashboard with Reactstrap PRO</h5>
-                                                            <p className="font-size-lg my-3 text-white-50">Browse through the live previews to see just how powerful this admin template really is!</p>
-                                                            <p className="text-light">This admin template is a complete frontend solution for easy-building applications or presentation websites. It&#39;s fully responsive and designed by professional UI&#x2F;UX designers and developers.</p>
+                                                            <h5 className="font-weight-bold display-3">Bamburgh React Messenger Application with Reactstrap PRO</h5>
+                                                            <p className="font-size-lg my-3 text-white-50">All components from the General dashboard template can be used in the individual applications pages, without modifications.</p>
+                                                            <p className="text-light">Regardless of the product type you&#39;re building, use this template to build your product if it is the closest to your needs. Together with the General interchangeable components you will be able to create any layout you need.</p>
 
                                                             <div className="divider bg-white opacity-2 my-3 my-lg-5" />
 
@@ -1372,9 +1382,47 @@ export default function LivePreviewExample() {
                                 </TabPane>
                             </TabContent>
                         </Container>
+
+                    <div className="hero-wrapper bg-composed-wrapper bg-second z-below" style={{marginTop: '-150px'}}>
+                        <div className="hero-wrapper--content flex-column">
+                            <div className="shape-container-bottom-2 w-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                                    <path fill="var(--white)" fillOpacity="1" d="M0,288L34.3,250.7C68.6,213,137,139,206,144C274.3,149,343,235,411,229.3C480,224,549,128,617,101.3C685.7,75,754,117,823,122.7C891.4,128,960,96,1029,112C1097.1,128,1166,192,1234,186.7C1302.9,181,1371,107,1406,69.3L1440,32L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path>
+                                </svg>
+                            </div>
+                            <div className="bg-composed-wrapper--image opacity-3" style={{ backgroundImage: 'url(' + hero1 + ')' }} />
+                            <div className="bg-composed-wrapper--bg bg-deep-sky opacity-4" />
+                            <div className="bg-composed-wrapper--content pb-5">
+                                <Container className="py-5 text-center">
+                                    <div className="py-5 py-sm-0">
+                                        <div>
+                                            <h4 className="font-weight-bold text-white display-4">
+                                                Monthly Subscription
+                                            </h4>
+                                            <Col md="8" lg="6" className="mx-auto">
+                                                <p className="text-white opacity-8 mt-3 mb-5 font-size-xl">
+                                                    All components from the General dashboard template can be used in the individual applications pages, without modifications.
+                                                </p>
+                                            </Col>
+                                        </div>
+                                        <Button color="success" className="px-5 font-size-lg shadow-sm-dark py-3 btn-pill mx-2">
+                                            Buy Now
+                                        </Button>
+                                        <Button color="primary" className="bg-white px-4 text-second shadow-sm font-weight-bold py-2 btn-pill mx-2">
+                                            Learn more
+                                        </Button>
+                                    </div>
+                                </Container>
+                            </div>
+                            <div className="shape-container-top-1 w-100">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                                    <path fill="var(--white)" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,176C384,192,480,192,576,202.7C672,213,768,235,864,213.3C960,192,1056,128,1152,133.3C1248,139,1344,213,1392,250.7L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>
     );
 }
-

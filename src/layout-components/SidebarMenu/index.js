@@ -98,14 +98,14 @@ const sidebarMenuContent = [
     icon: 'pe-7s-note2',
     description:
       'These can be used with other components and elements to create stunning and unique new elements for your UIs.',
-    to: '/ListGroups'
+    to: '/profile'
   },
   {
     label: 'Change password',
     icon: 'pe-7s-id',
     description:
       'These can be used with other components and elements to create stunning and unique new elements for your UIs.',
-    to: '/ListGroups'
+    to: '/change-password'
   }
   ,
   {

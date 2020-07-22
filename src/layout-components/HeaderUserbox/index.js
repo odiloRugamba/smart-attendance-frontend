@@ -1,4 +1,5 @@
 import React, { Fragment, Component } from 'react';
+import jwtDecode from 'jwt-decode';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -13,10 +14,14 @@ import {
   DropdownMenu
 } from 'reactstrap';
 
-import avatar5 from '../../assets/images/avatars/odilo.png';
+import avatar5 from '../../assets/images/avatars/user-2.png';
+import JwtDecode from 'jwt-decode';
 
  function HeaderUserbox(props){
-    console.log(props);
+
+  const token = localStorage.getItem('smartgate_token')
+    const user = JwtDecode(token)
+    console.log(user);
     return (
       <Fragment>
         <UncontrolledDropdown className="user-box position-relative ml-2">
@@ -27,8 +32,8 @@ import avatar5 from '../../assets/images/avatars/odilo.png';
               <img src={avatar5} className="img-fluid" alt="..." />
             </div>
             <div className="d-none d-xl-block pl-2">
-              <div className="font-weight-bold">Odilo Rugamba</div>
-              <span className="text-black-50">{props.loggedUser.user.role}</span>
+              <div className="font-weight-bold">{user.email}</div>
+              <span className="text-black-50">{user.role}</span>
             </div>
             <span className="pl-1 pl-xl-3">
               <FontAwesomeIcon

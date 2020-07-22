@@ -69,7 +69,7 @@ const Routes = () => {
         fallback={
           <div className="d-flex align-items-center vh-100 justify-content-center text-center font-weight-bold font-size-lg py-3">
             <div className="w-50 mx-auto">
-              Please wait while we load the live preview examples
+              Please wait ...
             </div>
           </div>
         }>
@@ -98,7 +98,7 @@ const Routes = () => {
 
           <Route
             path={[
-              '/DashboardDefault',
+              '/dashboard',
               '/add-staff',
               '/AllStaffs',
               '/dashboard/add-school',
@@ -119,34 +119,34 @@ const Routes = () => {
                   variants={pageVariants}
                   transition={pageTransition}>
                   <PrivateRoute
-                    path="/DashboardDefault"
+                    path="/dashboard"
                     component={DashboardDefault}
                   />
-                  <Route path="/add-staff" component={AddStaff} />
-                  <Route path="/AllStaffs" component={AllStaffs} />
-                  <Route path="/NavigationMenus" component={NavigationMenus} />
-                  <Route path="/ProgressBars" component={ProgressBars} />
-                  <Route path="/Pagination" component={Pagination} />
-                  <Route path="/Scrollable" component={Scrollable} />
-                  <Route path="/All-students" component={AllStudents} />
-                  <Route path="/Icons" component={Icons} />
-                  <Route
+                  <PrivateRoute path="/add-staff" component={AddStaff} />
+                  <PrivateRoute path="/AllStaffs" component={AllStaffs} />
+                  <PrivateRoute path="/NavigationMenus" component={NavigationMenus} />
+                  <PrivateRoute path="/ProgressBars" component={ProgressBars} />
+                  <PrivateRoute path="/Pagination" component={Pagination} />
+                  <PrivateRoute path="/Scrollable" component={Scrollable} />
+                  <PrivateRoute path="/All-students" component={AllStudents} />
+                  <PrivateRoute path="/Icons" component={Icons} />
+                  <PrivateRoute
                     path="/UtilitiesHelpers"
                     component={UtilitiesHelpers}
                   />
-                  <Route path="/add-student" component={AddStudent} />
-                  <Route path="/Profile" component={Profile} />
-                  <Route path="/dashboard/add-school" component={AddSchool} />
-                  <Route path="/update-school" component={updateSchool} />
-                  <Route path="/Popovers" component={Popovers} />
-                  <Route path="/Tooltips" component={Tooltips} />
-                  <Route path="/Tabs" component={Tabs} />
-                  <Route path="/RegularTables1" component={RegularTables1} />
-                  <Route path="/RegularTables4" component={RegularTables4} />
-                  <Route path="/FormsLayout" component={FormsLayout} />
-                  <Route path="/FormsControls" component={FormsControls} />
-                  <Route path="/ApexCharts" component={ApexCharts} />
-                  <Route path="/Maps" component={Maps} />
+                  <PrivateRoute path="/add-student" component={AddStudent} />
+                  <PrivateRoute path="/Profile" component={Profile} />
+                  <PrivateRoute path="/dashboard/add-school" component={AddSchool} />
+                  <PrivateRoute path="/update-school" component={updateSchool} />
+                  <PrivateRoute path="/Popovers" component={Popovers} />
+                  <PrivateRoute path="/Tooltips" component={Tooltips} />
+                  <PrivateRoute path="/Tabs" component={Tabs} />
+                  <PrivateRoute path="/RegularTables1" component={RegularTables1} />
+                  <PrivateRoute path="/RegularTables4" component={RegularTables4} />
+                  <PrivateRoute path="/FormsLayout" component={FormsLayout} />
+                  <PrivateRoute path="/FormsControls" component={FormsControls} />
+                  <PrivateRoute path="/ApexCharts" component={ApexCharts} />
+                  <PrivateRoute path="/Maps" component={Maps} />
                   
                 </motion.div>
               </Switch>

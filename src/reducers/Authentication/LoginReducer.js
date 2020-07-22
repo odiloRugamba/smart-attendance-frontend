@@ -1,4 +1,4 @@
-import { LOGIN_SUCCESS, LOGIN_FAILURE } from '../../actions/actionTypes';
+import { LOGIN_SUCCESS, LOGIN_FAILURE, SET_CURRENT_USER } from '../../actions/actionTypes';
 
 const INITIAL_STATE = {
   isLoading: false,
@@ -24,6 +24,14 @@ const LoginReducer = (state = INITIAL_STATE, {type, payload}) => {
         isLoading: false,
         isAuthenticated : false,
       };
+      case SET_CURRENT_USER:
+        return {
+          ...state,
+          isAuthenticated: true,
+          user: {
+            image: payload,
+          },
+        };
     default:
       return state;
   }

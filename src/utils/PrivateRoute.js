@@ -1,11 +1,9 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import qs from 'qs';
 import { connect } from 'react-redux';
 
 const PrivateRoute = ({ setUser, component: Component, ...rest }) => {
-  const { token } = qs.parse(window.location.search, { ignoreQueryPrefix: true });
 
   return (
     <Route

@@ -4,7 +4,7 @@ import history from '../../utils/helpers/history';
 import { LOGIN_SUCCESS, LOGIN_FAILURE, SET_CURRENT_USER } from '../actionTypes';
 import  HttpService  from '../../utils/HttpService';
 import creator from '../creator';
-import { DashboardDefault } from 'example-pages';
+
 
 export const loginAction = (data) => async (dispatch) => {
   try {
