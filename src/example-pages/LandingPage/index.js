@@ -5,7 +5,7 @@ import { Row, Col } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 
-import hero9 from '../../assets/images/hero-bg/hero-9.jpg';
+import hero9 from '../../assets/images/hero-bg/hero-2.jpg';
 import { Button, UncontrolledTooltip, Badge } from 'reactstrap';
 
 const LandingPage = () => {
@@ -28,7 +28,7 @@ const LandingPage = () => {
                       color="info"
                       className="px-4 text-uppercase h-auto py-1"
                       id="ProjVersion123">
-                      FREE react Admin Dashboard Template
+                      Smart School Project
                     </Badge>
                     <UncontrolledTooltip
                       placement="top"
@@ -37,16 +37,13 @@ const LandingPage = () => {
                     </UncontrolledTooltip>
                     <div className="px-4 px-sm-0 text-white mt-4">
                       <h1 className="display-2 mb-5 font-weight-bold">
-                        Bamburgh React Admin Dashboard with Reactstrap Free
+                        Welcome to Smart gate project
                       </h1>
                       <p className="font-size-xl text-white-50 mb-3">
-                        This admin template is the perfect lite solution for
-                        building React powered applications or presentation
-                        websites.
+                        With this system you can be able to navigate to some cool stuffs relating school and have access on some features
                       </p>
                       <p className="text-white font-size-lg">
-                        Check out the live preview to see all the available
-                        components in action!
+                        Check out below links to be directed then do something amazing!
                       </p>
                       <div className="divider border-2 border-light my-5 border-light opacity-2 mx-auto rounded-circle w-50" />
                       <div>
@@ -62,23 +59,10 @@ const LandingPage = () => {
                             <FontAwesomeIcon icon={['fas', 'arrow-right']} />
                           </span>
                         </Button>
+           
                         <Button
                           tag="a"
-                          size="lg"
-                          color="warning"
-                          className="d-block d-sm-inline-block ml-0 mt-3 mt-sm-0 ml-sm-3"
                           href="/login"
-                          title="Download Bamburgh React Admin Dashboard with Reactstrap Free">
-                          <span className="btn-wrapper--icon">
-                            <FontAwesomeIcon icon={['fas', 'sign']} />
-                          </span>
-                          <span className="btn-wrapper--label">
-                            Login
-                          </span>
-                        </Button>
-                        <Button
-                          tag="a"
-                          href="/DashboardDefault"
                           size="lg"
                           color="first"
                           className="d-block d-sm-inline-block ml-0 ml-sm-3 mt-3 mt-sm-0"
@@ -89,14 +73,10 @@ const LandingPage = () => {
                             />
                           </span>
                           <span className="btn-wrapper--label">
-                            Dashboard
+                          Login
                           </span>
                         </Button>
                       </div>
-                      <small className="d-block pt-4">
-                        For a comprehensive list of components &amp; commercial
-                        licenses, we recommend the PRO version.
-                      </small>
                     </div>
                   </div>
                 </Col>
