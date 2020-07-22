@@ -17,19 +17,19 @@ const sidebarMenuContent = [
   },
   {
     label: 'School Management',
-    icon: 'pe-7s-keypad',
+    icon: 'pe-7s-culture',
     content: [
       {
         label: 'Add school',
         description:
           'With this page you can manage schools related issues!',
-        to: '/add-school'
+        to: '/dashboard/add-school'
       }
     ]
   },
   {
     label: 'Manage staff',
-    icon: 'pe-7s-keypad',
+    icon: 'pe-7s-users',
     content: [
       {
         label: 'add staff',
@@ -53,7 +53,7 @@ const sidebarMenuContent = [
   },
   {
     label: 'Manage students',
-    icon: 'pe-7s-box2',
+    icon: 'pe-7s-users',
     content: [
       {
         label: 'Add a student',
@@ -95,7 +95,7 @@ const sidebarMenuContent = [
   },
   {
     label: 'My profile',
-    icon: 'pe-7s-id',
+    icon: 'pe-7s-note2',
     description:
       'These can be used with other components and elements to create stunning and unique new elements for your UIs.',
     to: '/ListGroups'
@@ -110,10 +110,10 @@ const sidebarMenuContent = [
   ,
   {
     label: 'Logout',
-    icon: 'pe-7s-id',
+    icon: 'pe-7s-right-arrow',
     description:
       'These can be used with other components and elements to create stunning and unique new elements for your UIs.',
-    to: '/ListGroups'
+    to: '/'
   },
   
 ];

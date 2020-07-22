@@ -67,13 +67,13 @@ const LandingPage = () => {
                           color="first"
                           className="d-block d-sm-inline-block ml-0 ml-sm-3 mt-3 mt-sm-0"
                           title="Learn more about Bamburgh React Admin Dashboard with Reactstrap Free version">
+                          <span className="btn-wrapper--label">
+                          Login
+                          </span>
                           <span className="btn-wrapper--icon">
                             <FontAwesomeIcon
                               icon={['fas', 'external-link-alt']}
                             />
-                          </span>
-                          <span className="btn-wrapper--label">
-                          Login
                           </span>
                         </Button>
                       </div>

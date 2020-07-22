@@ -101,7 +101,7 @@ const Routes = () => {
               '/DashboardDefault',
               '/add-staff',
               '/AllStaffs',
-              '/add-school',
+              '/dashboard/add-school',
               '/Pagination',
               '/Scrollable',
               '/All-students',
@@ -136,7 +136,7 @@ const Routes = () => {
                   />
                   <Route path="/add-student" component={AddStudent} />
                   <Route path="/Profile" component={Profile} />
-                  <Route path="/add-school" component={AddSchool} />
+                  <Route path="/dashboard/add-school" component={AddSchool} />
                   <Route path="/update-school" component={updateSchool} />
                   <Route path="/Popovers" component={Popovers} />
                   <Route path="/Tooltips" component={Tooltips} />
