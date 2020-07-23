@@ -11,7 +11,7 @@ class SidebarHeader extends Component {
         <div className="app-sidebar--header">
           <div className="nav-logo">
             <Link
-              to="/DashboardDefault"
+              to="/dashboard"
               title="Smart project App">
               <i>
                 <img

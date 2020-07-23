@@ -1,4 +1,5 @@
 import { toast } from 'react-toastify';
+import history from '../../utils/helpers/history'
 import { FORGOT_PASSWORD_START, FORGOT_PASSWORD_SUCCESS, FORGOT_PASSWORD_ERROR } from '../actionTypes';
 import  {API}  from '../../utils/API';
 import creator from '../creator';
@@ -24,7 +25,8 @@ export const ResetPasswordAction = (data) => async (dispatch) => {
       dispatch(creator(FORGOT_PASSWORD_START, true))
       const response = await API.patch(`/auth/reset/${data.email}/${data.token}`, data);
       toast.success('You have successfully updated your password');
-      return dispatch(creator(FORGOT_PASSWORD_SUCCESS, response.data));
+      await dispatch(creator(FORGOT_PASSWORD_SUCCESS, response.data));
+      history.push('/login')
     } catch (error) {
       if (error.response && error.response.data) {
         toast.error(error.response.data.message,{

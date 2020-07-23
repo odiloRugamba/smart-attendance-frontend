@@ -9,7 +9,7 @@ import creator from '../creator';
 export const loginAction = (data) => async (dispatch) => {
   try {
     const { email, password } = data;
-    
+    console.log(data);
     const response = await HttpService.post('/auth/login', {
       email,
       password,
@@ -17,8 +17,7 @@ export const loginAction = (data) => async (dispatch) => {
     
     localStorage.setItem('smartgate_token', response.data.token);
     const info = jwtDecode(response.data.token)
-    console.log(info);
-    
+  
     await dispatch(creator(SET_CURRENT_USER, info));
     await dispatch(creator(LOGIN_SUCCESS, response));
     toast.success(`${response.message}`, {

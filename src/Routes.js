@@ -101,7 +101,7 @@ const Routes = () => {
               '/dashboard',
               '/add-staff',
               '/AllStaffs',
-              '/dashboard/add-school',
+              '/add-school',
               '/Pagination',
               '/Scrollable',
               '/All-students',
@@ -136,7 +136,7 @@ const Routes = () => {
                   />
                   <PrivateRoute path="/add-student" component={AddStudent} />
                   <PrivateRoute path="/Profile" component={Profile} />
-                  <PrivateRoute path="/dashboard/add-school" component={AddSchool} />
+                  <PrivateRoute path="/add-school" component={AddSchool} />
                   <PrivateRoute path="/update-school" component={updateSchool} />
                   <PrivateRoute path="/Popovers" component={Popovers} />
                   <PrivateRoute path="/Tooltips" component={Tooltips} />

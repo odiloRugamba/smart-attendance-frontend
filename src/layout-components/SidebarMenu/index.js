@@ -1,5 +1,4 @@
 import React, { Fragment, Component } from 'react';
-
 import PerfectScrollbar from 'react-perfect-scrollbar';
 
 import RouterLink from '../ReactMetismenuRouterLink';
@@ -12,7 +11,7 @@ const sidebarMenuContent = [
     label: 'Dashboard',
     description:
       'This is a dashboard page example built using this template.',
-    to: '/DashboardDefault'
+    to: '/dashboard'
 
   },
   {
@@ -23,7 +22,7 @@ const sidebarMenuContent = [
         label: 'Add school',
         description:
           'With this page you can manage schools related issues!',
-        to: '/dashboard/add-school'
+        to: '/add-school'
       }
     ]
   },

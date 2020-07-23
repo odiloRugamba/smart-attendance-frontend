@@ -1,15 +1,15 @@
 export default class AuthService {
     
     static setToken(token) {
-      localStorage.setItem('golden_token', token);
+      localStorage.setItem('smartgate_token', token);
     }
   
     static getToken() {
-      return localStorage.getItem('golden_token');
+      return localStorage.getItem('smartgate_token');
     }
   
     static isLoggedIn() {
-      return !!localStorage.getItem('golden_token');
+      return !!localStorage.getItem('smartgate_token');
     }
   }
   

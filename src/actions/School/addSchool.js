@@ -7,9 +7,7 @@ export const AddSchoolAction = (data) => async (dispatch) => {
   try {
     
     console.log(data);
-    const response = await HttpService.post('/schools', {
-      data
-    });
+    const response = await HttpService.post('/schools', data);
     await dispatch(creator(ADD_SCHOOL_SUCCESS, response));
     toast.success(`${response.message}`, {
       position: toast.POSITION.TOP_CENTER
