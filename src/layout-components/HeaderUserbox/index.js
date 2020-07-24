@@ -1,5 +1,4 @@
-import React, { Fragment, Component } from 'react';
-import jwtDecode from 'jwt-decode';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -17,11 +16,10 @@ import {
 import avatar5 from '../../assets/images/avatars/user-2.png';
 import JwtDecode from 'jwt-decode';
 
- function HeaderUserbox(props){
+ function HeaderUserbox(){
 
   const token = localStorage.getItem('smartgate_token')
     const user = JwtDecode(token)
-    console.log(user);
     return (
       <Fragment>
         <UncontrolledDropdown className="user-box position-relative ml-2">

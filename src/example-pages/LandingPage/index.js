@@ -49,7 +49,7 @@ const LandingPage = () => {
                       <div>
                         <Button
                           tag={Link}
-                          to="/DashboardDefault"
+                          to="/dashboard"
                           size="lg"
                           color="success"
                           className="d-block d-sm-inline-block"

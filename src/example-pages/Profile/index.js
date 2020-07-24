@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Row, Col, Card, Input, Button, Nav, NavItem, NavLink, Container, CardHeader,ListGroupItem, TabPane, TabContent, Badge, ListGroup } from 'reactstrap';
 import clsx from 'classnames';
-import PerfectScrollbar from 'react-perfect-scrollbar';import Dropzone, {useDropzone} from 'react-dropzone';import CountUp from 'react-countup';
+import PerfectScrollbar from 'react-perfect-scrollbar';import {useDropzone} from 'react-dropzone';import CountUp from 'react-countup';
 import hero1 from '../../assets/images/hero-bg/hero-8.jpg';
 import stock3 from '../../assets/images/stock-photos/stock-2.jpg';
-import stock4 from '../../assets/images/stock-photos/stock-1.jpg';
 
 import stock1 from '../../assets/images/stock-photos/stock-2.jpg';
 import stock2 from '../../assets/images/stock-photos/stock-1.jpg';
 
-import { Upload, Check, X, User, Edit2 } from 'react-feather';
+import { Upload, Check, X, User } from 'react-feather';
 import {useEffect} from 'react';
 
 import people1 from '../../assets/images/stock-photos/people-1.jpg';

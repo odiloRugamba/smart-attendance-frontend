@@ -9,36 +9,21 @@ import { LeftSidebar, PresentationLayout } from './layout-blueprints';
 
 // Example Pages
 
-import AddStaff from './example-pages/Add-staff';
-import AllStaffs from './example-pages/All-staff';
-import NavigationMenus from './example-pages/NavigationMenus';
-import ProgressBars from './example-pages/ProgressBars';
-import Pagination from './example-pages/Pagination';
-import Scrollable from './example-pages/Scrollable';
-import AllStudents from './example-pages/All-students';
-import Icons from './example-pages/Icons';
-import UtilitiesHelpers from './example-pages/UtilitiesHelpers';
-import RegularTables1 from './example-pages/RegularTables1';
-import RegularTables4 from './example-pages/RegularTables4';
-import FormsLayout from './example-pages/FormsLayout';
-import FormsControls from './example-pages/FormsControls';
-import login from './pages/Login';
-import ForgetPassword from './pages/Forget-password';
-import ResetPassword from './pages/Reset-password';
-import Welcome from './pages/Welcome';
+import AddStaff from './example-pages/Staff/add-new-staff';
+import AllStaffs from './example-pages/Staff/all-staffs';
+import AllStudents from './example-pages/Student/all-students';
+import login from './example-pages/Login';
+import ForgetPassword from './example-pages/Forget-password';
+import ResetPassword from './example-pages/Reset-password';
+import Welcome from './example-pages/Welcome';
 
 const DashboardDefault = lazy(() => import('./example-pages/DashboardDefault'));
-const AddStudent = lazy(() => import('./example-pages/Add-student'));
+const AddStudent = lazy(() => import('./example-pages/Student/add-new-student'));
 const Profile = lazy(() => import('./example-pages/Profile'));
 const LandingPage = lazy(() => import('./example-pages/LandingPage'));
-const AddSchool = lazy(() => import('./example-pages/Add-school'));
+const AddSchool = lazy(() => import('./example-pages/School/Add-new-school'));
 const updateSchool = lazy(() => import('./example-pages/School/Update-school'));
-const Popovers = lazy(() => import('./example-pages/Popovers'));
-const Tooltips = lazy(() => import('./example-pages/Tooltips'));
-const Tabs = lazy(() => import('./example-pages/Tabs'));
-const ApexCharts = lazy(() => import('./example-pages/ApexCharts'));
-const Maps = lazy(() => import('./example-pages/Maps'));
-
+const AllSchools = lazy(() => import('./example-pages/School/all-schools'));
 const Routes = () => {
   const location = useLocation();
 
@@ -106,7 +91,7 @@ const Routes = () => {
               '/Scrollable',
               '/All-students',
               '/update-school',
-              '/UtilitiesHelpers',
+              '/all-schools',
               '/add-student',
               '/Profile'
             ]}>
@@ -124,30 +109,12 @@ const Routes = () => {
                   />
                   <PrivateRoute path="/add-staff" component={AddStaff} />
                   <PrivateRoute path="/AllStaffs" component={AllStaffs} />
-                  <PrivateRoute path="/NavigationMenus" component={NavigationMenus} />
-                  <PrivateRoute path="/ProgressBars" component={ProgressBars} />
-                  <PrivateRoute path="/Pagination" component={Pagination} />
-                  <PrivateRoute path="/Scrollable" component={Scrollable} />
                   <PrivateRoute path="/All-students" component={AllStudents} />
-                  <PrivateRoute path="/Icons" component={Icons} />
-                  <PrivateRoute
-                    path="/UtilitiesHelpers"
-                    component={UtilitiesHelpers}
-                  />
                   <PrivateRoute path="/add-student" component={AddStudent} />
                   <PrivateRoute path="/Profile" component={Profile} />
                   <PrivateRoute path="/add-school" component={AddSchool} />
                   <PrivateRoute path="/update-school" component={updateSchool} />
-                  <PrivateRoute path="/Popovers" component={Popovers} />
-                  <PrivateRoute path="/Tooltips" component={Tooltips} />
-                  <PrivateRoute path="/Tabs" component={Tabs} />
-                  <PrivateRoute path="/RegularTables1" component={RegularTables1} />
-                  <PrivateRoute path="/RegularTables4" component={RegularTables4} />
-                  <PrivateRoute path="/FormsLayout" component={FormsLayout} />
-                  <PrivateRoute path="/FormsControls" component={FormsControls} />
-                  <PrivateRoute path="/ApexCharts" component={ApexCharts} />
-                  <PrivateRoute path="/Maps" component={Maps} />
-                  
+                  <PrivateRoute path="/all-schools" component={AllSchools} />
                 </motion.div>
               </Switch>
             </LeftSidebar>
