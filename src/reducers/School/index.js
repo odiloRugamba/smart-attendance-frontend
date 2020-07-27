@@ -1,17 +1,20 @@
 import {
     ADD_SCHOOL_START,
     ADD_SCHOOL_SUCCESS,
-    ADD_SCHOOL_FAILURE 
+    ADD_SCHOOL_FAILURE,
+    GET_SCHOOLS_START,
+    GET_SCHOOLS_ERROR,
+    GET_SCHOOLS_SUCCESS
   } from '../../actions/actionTypes';
   
   const INITIAL_STATE = {
     isLoading: false,
-    user: {},
+    schools: {},
     error: null,
   };
   
   
-  const SignupReducer = (state = INITIAL_STATE, {type, payload}) => {
+  const SchoolReducer = (state = INITIAL_STATE, {type, payload}) => {
      
     switch (type) {
       case ADD_SCHOOL_START:
@@ -23,20 +26,37 @@ import {
         return {
           ...state,
           isLoading: true,
-          user: payload,
+          schools: payload,
           error: null,
         };
         
       case ADD_SCHOOL_FAILURE:
         return {
-          user: {},
           isLoading: false,
           error: payload.error
         };
+        case GET_SCHOOLS_START:
+            return {
+                ...state,
+                isLoading: true
+            }
+        case GET_SCHOOLS_SUCCESS:
+          return {
+            ...state,
+            isLoading: true,
+            schools: payload,
+            error: null,
+          };
+          
+        case GET_SCHOOLS_ERROR:
+          return {
+            isLoading: false,
+            error: payload.error
+          };
       default:
         return state;
     }
   };
   
-  export default SignupReducer;
+  export default SchoolReducer;
   
