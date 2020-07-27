@@ -1,11 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import { connect } from 'react-redux';
 import JwtDecode from 'jwt-decode';
-import Select from 'react-select';
 import { Row, Col, FormGroup, Input, Button, Label, Container } from 'reactstrap';
 import { PageTitle } from '../../layout-components';
 import { AddStudentAction } from '../../actions/Student'
-import {GetAllClassess} from '../../actions/Class/index'
 
 
 function AddStudent(props) {
@@ -52,12 +50,6 @@ function AddStudent(props) {
         await  Student(newStudent)
        }
 
-        useEffect(() => {
-            props.Classes(id)
-        }, [id])
-
-        const { classes, isLoading, error } = props;
-        console.log("classsss", classes);
   return (
       <>
        <PageTitle
@@ -92,10 +84,8 @@ function AddStudent(props) {
                                     <Label className="font-weight-bold" for="">Class</Label>
                                     <Input type="select" name="classId" onChange={(e) => setclassId(e.target.value)} id="exampleSelect">
                                         <option>select....</option>
-                                        { classes.length > 0 ?classes.map((clas) => {
-                                            return <option key={clas.id} value={clas.id}
-                                            >{clas.level} {clas.year} {clas.combination} {clas.label} </option>
-                                        }): <p>NO classes</p>}
+                                        <option value="1">Primary Level</option>
+                                        <option value="2">Ordinary level</option>
                                     </Input>
                                 </Col>
                                 <Col md="6">
@@ -184,14 +174,11 @@ function AddStudent(props) {
       </>
   );
 }
-const mapStateToProps = ({ Class }) => ({
-    
-    classes: Class.classes,
-    isLoading: Class.isLoading,
-    error: Class.error,
-});
-
+const mapStateToProps = state => {
+    return {
+        isAuthenticated: state.auth
+    }
+}
 export default connect(mapStateToProps, {
-    Student: AddStudentAction,
-    Classes: GetAllClassess
+    Student: AddStudentAction
 })(AddStudent);

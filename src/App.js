@@ -259,7 +259,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <BrowserRouter history={history}>
+        <BrowserRouter history={history} basename="/smart-gate">
           <ScrollToTop>
             <Routes />
           </ScrollToTop>

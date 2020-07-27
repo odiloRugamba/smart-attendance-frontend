@@ -1,21 +1,34 @@
 import React, {  useState,useEffect} from 'react';
 import { connect } from 'react-redux';
-import { Table, Card, Button, Spinner,  } from 'reactstrap';
-import { bindActionCreators } from 'redux';
+import {
+    Link
+  } from "react-router-dom";
+import { Table, Card, Button, Spinner } from 'reactstrap';
 import { PageTitle } from '../../layout-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { GetAllSchools } from '../../actions/School';
+import { GetAllSchools, DeleteSchool } from '../../actions/School';
 
 
 
  function AllSchools(props) {
+    const [] = useState(true);
 
      useEffect(() => {
         const { Schools } = props;
+        console.log(Schools);
         Schools();
      }, []);
+
      const { schools, isLoading } = props;
-    //  const Nodata = isLoading ? <Spinner /> : <p>No data in the table</p>
+    //  console.log("delee",schools.id);
+
+     function deleteItem(id) {
+         console.log('this', id);
+        props.DeteteList(id);
+     }
+
+     
+    const Nodata = isLoading ? <div><Spinner /> </div> : <p>No data in the table</p>
   return (
       <>
       <PageTitle
@@ -31,18 +44,19 @@ import { GetAllSchools } from '../../actions/School';
                           <th scope="col">School Name</th>
                           <th scope="col">School Email</th>
                           <th scope="col">Head Name</th>
+                          <th scope="col">Head Email</th>
                           <th scope="col">Head Phone</th>
                           <th scope="col"> Action</th>
                       </tr>
                       </thead>
                       <tbody>
                      {
-                      schools.length > 0 ? schools.map((school, idx) => 
+                      schools && schools.length > 0 ? schools.map((school, index) =>
                         
-                        <tr key={idx}>
+                        <tr key={index}>
                         <td className="text-center text-black-50">
                             <span>
-                                {idx+1}
+                                {index+1}
                             </span>
                         </td>
                         <td>
@@ -57,11 +71,11 @@ import { GetAllSchools } from '../../actions/School';
                             </span>
                         </td>
                         <td className="font-size-lg font-weight-bold">
-                        {school.schoolName}
+                        {school.headFirstName} - {school.headLastName}
                         </td>
                         <td className="text-warning">
                            <span>
-                             {school.headFirstName} - {school.headLastName}
+                             {school.headEmail}
                            </span>
                         </td>
                         <td className="text-warning">
@@ -71,23 +85,21 @@ import { GetAllSchools } from '../../actions/School';
                         </td>
                         <td className="text-right">
       
-                            <Button color="neutral-first" className="mx-1 rounded-sm shadow-none hover-scale-sm d-40 border-0 p-0 d-inline-flex align-items-center justify-content-center">
-                                <FontAwesomeIcon icon={['far', 'edit']} className="font-size-sm" />
+                            <Button color="neutral-first"  className="mx-1 rounded-sm shadow-none hover-scale-sm d-40 border-0 p-0 d-inline-flex align-items-center justify-content-center">
+                                 <Link to={`/schools/${school.id}/edit`}><FontAwesomeIcon icon={['far', 'edit']} className="font-size-sm" /></Link>
                             </Button>
-                            <Button color="neutral-danger" className="mx-1 rounded-sm shadow-none hover-scale-sm d-40 border-0 p-0 d-inline-flex align-items-center justify-content-center">
+                            <Button color="neutral-danger" onClick={(e) => deleteItem(school.id)}  className="mx-1 rounded-sm shadow-none hover-scale-sm d-40 border-0 p-0 d-inline-flex align-items-center justify-content-center">
                                 <FontAwesomeIcon icon={['fas', 'times']} className="font-size-sm" />
                             </Button>
                         </td>
                     </tr>
                                            
-                        ) : 'No data in the table'
-                     }
+                        ) : Nodata  }
                       <tr className="divider"></tr>
                       </tbody>
                   </Table>
               </div>
           </Card>
-
       </>
   );
 }
@@ -103,5 +115,6 @@ const mapStateToProps = ({ School }) => ({
 // }, dispatch)
 
 export default connect(mapStateToProps, {
-    Schools: GetAllSchools   
+    Schools: GetAllSchools,
+    DeteteList: DeleteSchool 
 })(AllSchools);

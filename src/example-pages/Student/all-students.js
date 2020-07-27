@@ -1,11 +1,21 @@
-import React from 'react';
-
+import React, { useEffect} from 'react';
+import { connect } from 'react-redux';
+import JwtDecode from 'jwt-decode';
 import { Table, Card, Button,  } from 'reactstrap';
 import { PageTitle } from '../../layout-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { AddStudentAction} from '../../actions/Student/index'
 
+function GetAllStudent(props) {
 
-export default function LivePreviewExample() {
+    const token = localStorage.getItem('smartgate_token')
+    const  {id}  = JwtDecode(token).school;
+
+    useEffect(() => {
+        const { Students } = props;
+        console.log(Students);
+        Students(id);
+    })
   return (
       <>
       <PageTitle
@@ -70,93 +80,6 @@ export default function LivePreviewExample() {
                           </td>
                       </tr>
                       <tr className="divider"></tr>
-                      <tr>
-                          <td className="text-center text-black-50">
-                              <span>
-                                  #548
-                              </span>
-                          </td>
-                          <td>
-                              <b>
-                                  Apple Watch 4
-                              </b>
-                              <span className="d-block text-black-50 font-size-sm">Short project description here</span>
-                          </td>
-                          <td>
-                              <span>
-                                  Kate Jorah
-                              </span>
-                          </td>
-                          <td className="font-size-lg font-weight-bold">
-                              <small>$</small>
-                              <span>
-                                  2,184
-                              </span>
-                          </td>
-                          <td className="text-warning">
-                             <span>
-                                  19%
-                             </span>
-                          </td>
-                          <td className="text-right">
-                              <Button color="neutral-first" className="rounded-sm text-uppercase font-size-xs font-weight-bold mr-4 py-0 shadow-none hover-scale-sm w-auto d-40">
-                                  Pay Invoice
-                              </Button>
-                              <Button color="neutral-primary" className="mx-1 rounded-sm shadow-none hover-scale-sm d-40 border-0 p-0 d-inline-flex align-items-center justify-content-center">
-                                  <FontAwesomeIcon icon={['fas', 'search']} className="font-size-sm" />
-                              </Button>
-                              <Button color="neutral-first" className="mx-1 rounded-sm shadow-none hover-scale-sm d-40 border-0 p-0 d-inline-flex align-items-center justify-content-center">
-                                  <FontAwesomeIcon icon={['far', 'edit']} className="font-size-sm" />
-                              </Button>
-                              <Button color="neutral-danger" className="mx-1 rounded-sm shadow-none hover-scale-sm d-40 border-0 p-0 d-inline-flex align-items-center justify-content-center">
-                                  <FontAwesomeIcon icon={['fas', 'times']} className="font-size-sm" />
-                              </Button>
-                          </td>
-                      </tr>
-                      <tr className="divider"></tr>
-                      <tr>
-                          <td className="text-center text-black-50">
-                              <span>
-                                  #546
-                              </span>
-                          </td>
-                          <td>
-                              <b>
-                                  iPhone 11 PRO Max
-                              </b>
-                              <span className="d-block text-black-50 font-size-sm">Short project description here</span>
-                          </td>
-                          <td>
-                              <span>
-                                  Emma Taylor
-                              </span>
-                          </td>
-                          <td className="font-size-lg font-weight-bold">
-                              <small>$</small>
-                              <span>
-                                  1,594
-                              </span>
-                          </td>
-                          <td className="text-warning">
-                             <span>
-                                  21%
-                             </span>
-                          </td>
-                          <td className="text-right">
-                              <Button color="neutral-first" className="rounded-sm text-uppercase font-size-xs font-weight-bold mr-4 py-0 shadow-none hover-scale-sm w-auto d-40">
-                                  Pay Invoice
-                              </Button>
-                              <Button color="neutral-primary" className="mx-1 rounded-sm shadow-none hover-scale-sm d-40 border-0 p-0 d-inline-flex align-items-center justify-content-center">
-                                  <FontAwesomeIcon icon={['fas', 'search']} className="font-size-sm" />
-                              </Button>
-                              <Button color="neutral-first" className="mx-1 rounded-sm shadow-none hover-scale-sm d-40 border-0 p-0 d-inline-flex align-items-center justify-content-center">
-                                  <FontAwesomeIcon icon={['far', 'edit']} className="font-size-sm" />
-                              </Button>
-                              <Button color="neutral-danger" className="mx-1 rounded-sm shadow-none hover-scale-sm d-40 border-0 p-0 d-inline-flex align-items-center justify-content-center">
-                                  <FontAwesomeIcon icon={['fas', 'times']} className="font-size-sm" />
-                              </Button>
-                          </td>
-                      </tr>
                       </tbody>
                   </Table>
               </div>
@@ -165,3 +88,15 @@ export default function LivePreviewExample() {
       </>
   );
 }
+
+const mapStateToProps = ({ Student }) => ({
+    
+    students: Student.students,
+    isLoading: Student.isLoading,
+    error: Student.error,
+})
+// const mapDispatchToProps = dispatch => bindActionCreators({
+//     Studentes: GetAllStudentess
+// }, dispatch)
+
+export default connect(mapStateToProps, null)(GetAllStudent);

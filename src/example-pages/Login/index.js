@@ -14,8 +14,9 @@ function Login(props) {
          const { UserLogin } = props;
          await  UserLogin({email, password})
         }
-        console.log(props.isAuthenticated.user.role);
         
+        const { errors } = props;
+        console.log(errors);
     return (
         <>
             <div className="app-wrapper bg-white min-vh-100">
@@ -38,6 +39,7 @@ function Login(props) {
                                             or sign in with credentials
                                                 </div>
                                         <div>
+                                            {/* {errors} */}
                                         <AvForm>
                                                         <AvField name="email" placeholder="Enter email" label="Email" onChange={(e) => setEmail(e.target.value)} type="email" errorMessage="Invalid email" validate={{
                                                             required: {value: true},
@@ -56,7 +58,7 @@ function Login(props) {
                                                 </div>
                                             </div>
                                             <div className="text-center py-4">
-                                                <Button size="lg" block={true} color="second" onClick={handleSubmit}>Login</Button>
+                                                <Button size="lg" block={true} onClick={handleSubmit} color="primary">{props.isLoading ? 'Loading...' : 'Login'}</Button>
                                                 </div>
                                         </AvForm>
 
@@ -71,9 +73,10 @@ function Login(props) {
         </>
     );
 }
-const mapStateToProps = state => {
+const mapStateToProps = ({auth}) => {
     return {
-        isAuthenticated: state.auth
+        isLoading: auth.isLoading,
+        errors: auth.error
     }
 }
 
