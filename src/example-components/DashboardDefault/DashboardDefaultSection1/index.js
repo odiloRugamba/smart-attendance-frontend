@@ -3,14 +3,18 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GetAllSchools } from '../../../actions/School';
+import { GetAllStaffs } from '../../../actions/Staff';
 import { Row, Col, CardBody, Card } from 'reactstrap';
 
 function LivePreviewExample(props) {
   useEffect(() => {
-    const { Schools } = props;
+    const { Schools, Staffs } = props;
+    console.log(Staffs);
     Schools();
+    Staffs();
  }, []);
- const { schools, isLoading } = props;
+ const { schools, isLoading, staffs } = props;
+ console.log("staffs:", staffs);
   return (
     <Fragment>
       <Row>
@@ -44,7 +48,7 @@ function LivePreviewExample(props) {
                   <small className="text-white-50 d-block mb-1 text-uppercase">
                     New accounts
                   </small>
-                  <span className="font-size-xxl mt-1">23,274</span>
+                  <span className="font-size-xxl mt-1">{staffs.length}</span>
                 </div>
                 <div className="ml-auto">
                   <div className="bg-white text-center text-primary d-50 rounded-circle">
@@ -108,14 +112,16 @@ function LivePreviewExample(props) {
   );
 }
 
-const mapStateToProps = ({ School }) => ({
+const mapStateToProps = ({ School, Staff }) => ({
     
   schools: School.schools,
+  staffs: Staff.staffs,
   isLoading: School.isLoading,
   error: School.error,
 })
 const mapDispatchToProps = dispatch => bindActionCreators({
-    Schools: GetAllSchools
+    Schools: GetAllSchools,
+    Staffs: GetAllStaffs
 }, dispatch)
 
 export default connect(mapStateToProps,mapDispatchToProps)(LivePreviewExample);

@@ -16,6 +16,7 @@ import login from './example-pages/Login';
 import ForgetPassword from './example-pages/Forget-password';
 import ResetPassword from './example-pages/Reset-password';
 import Welcome from './example-pages/Welcome';
+import StudentsByClass from './example-pages/Class/StudentsByClass';
 
 const DashboardDefault = lazy(() => import('./example-pages/DashboardDefault'));
 const AddStudent = lazy(() => import('./example-pages/Student/add-new-student'));
@@ -24,6 +25,11 @@ const LandingPage = lazy(() => import('./example-pages/LandingPage'));
 const AddSchool = lazy(() => import('./example-pages/School/Add-new-school'));
 const updateSchool = lazy(() => import('./example-pages/School/Update-school'));
 const AllSchools = lazy(() => import('./example-pages/School/all-schools'));
+const AddPermission = lazy(() => import('./example-pages/Permissions/add-permission'));
+const AllPermission = lazy(() => import('./example-pages/Permissions/all-permissions'));
+const AddClass = lazy(() => import('./example-pages/Class/add-class'));
+const AllClasses = lazy(() => import('./example-pages/Class/all-classes'));
+const AddNewStudent = lazy(() => import('./example-pages/Class/add-class-student'));
 const Routes = () => {
   const location = useLocation();
 
@@ -87,13 +93,17 @@ const Routes = () => {
               '/add-staff',
               '/AllStaffs',
               '/add-school',
-              '/Pagination',
-              '/Scrollable',
+              '/add-permission',
+              '/all-permissions',
               '/All-students',
-              '/update-school',
+              '/schools/:id/edit',
               '/all-schools',
               '/add-student',
-              '/Profile'
+              '/Profile',
+              '/add-class',
+              '/all-classes',
+              '/classes/:id/students',
+              '/classes/:id/add-student'
             ]}>
             <LeftSidebar>
               <Switch location={location} key={location.pathname}>
@@ -113,8 +123,14 @@ const Routes = () => {
                   <PrivateRoute path="/add-student" component={AddStudent} />
                   <PrivateRoute path="/Profile" component={Profile} />
                   <PrivateRoute path="/add-school" component={AddSchool} />
-                  <PrivateRoute path="/update-school" component={updateSchool} />
+                  <PrivateRoute path="/schools/:id/edit" component={updateSchool} />
+                  <PrivateRoute path="/classes/:id/students" component={StudentsByClass} />
                   <PrivateRoute path="/all-schools" component={AllSchools} />
+                  <PrivateRoute path="/add-permission" component={AddPermission} />
+                  <PrivateRoute path="/all-permissions" component={AllPermission} />
+                  <PrivateRoute path="/add-class" component={AddClass} />
+                  <PrivateRoute path="/all-classes" component={AllClasses} />
+                  <PrivateRoute path="/classes/:id/add-student" component={AddNewStudent} />
                 </motion.div>
               </Switch>
             </LeftSidebar>

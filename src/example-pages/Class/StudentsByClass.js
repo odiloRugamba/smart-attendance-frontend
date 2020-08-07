@@ -1,24 +1,32 @@
 import React, { useEffect } from 'react';
 import JwtDecode from 'jwt-decode';
+import { bindActionCreators } from 'redux';
+import {
+    Link
+  } from "react-router-dom";
 import { connect } from 'react-redux';
-import { Table, Card, Button} from 'reactstrap';
+import { Table, Card, Button, Spinner,Nav,  NavItem, Badge,Col,NavLink, Row,DropdownMenu, DropdownToggle} from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { GetAllStaffs } from '../../actions/Staff';
+import {  GetAllStudents } from '../../actions/Class';
 
- function StaffPage(props) {
+ function ClassPage(props) {
     const token = localStorage.getItem('smartgate_token')
     const  {id}  = JwtDecode(token).school;
+    const ClassId = props.match.params.id;
+    console.log(ClassId);
     useEffect(() => {
-        const { Staffs } = props;
-        if(id === null){
-            console.log("School Id must be provided:)");
-        }else {
-            Staffs(id);
-        }
+        const { Students } = props;
+        Students(ClassId);
        
     }, [])
 
-        const { staffs } = props;
+        const { students, isLoading, error } = props;
+        console.log("classes:",students);
+
+        const Nodata = isLoading ? <div><Spinner /> </div> : <div>
+            <p>No registered students in this class</p>
+            <Button color="second" className="align-items-center white justify-content-center"><Link to={`/classes/${ClassId}/add-student`}>Add class member</Link></Button>
+        </div>  
         return (
             <>
 
@@ -28,48 +36,48 @@ import { GetAllStaffs } from '../../actions/Staff';
                             <thead className="thead-light text-capitalize font-size-sm font-weight-bold">
                             <tr>
                                 <th className="text-left px-4">No</th>
-                                <th className="text-left">FirstNae</th>
-                                <th className="text-left">LastName</th>
-                                <th className="text-right">Email</th>
-                                <th className="text-right">Phone</th>
+                                <th className="text-left">First Name</th>
+                                <th className="text-right">Last Name</th>
+                                <th className="text-right">gender</th>
+                                <th className="text-right">Date of Birth</th>
+                                <th className="text-center">View</th>
                                 <th className="text-center">Actions</th>
                             </tr>
                             </thead>
                             <tbody>
                            {
-                               staffs.length > 0 ? staffs.map((staff, index) =>
+                               students.length > 0 ? students.map((student, index) =>
                                <tr key={index}>
                                <td className="px-4">
                                {index+1}
                                </td>
                                <td className="text-left">
                                    <div>
-                                       <div className="font-size-sm font-weight-bold">{staff.firstName}</div>
-                                       <div className="font-size-sm opacity-7 text-success d-flex align-items-center">
-                                           {staff.role}
-                                       </div>
+                                       <div className="font-size-sm font-weight-bold">{student.firstName}</div>
                                    </div>
                                </td>
                                <td className="text-right">
-                                {staff.lastName}
+                                {student.lastName}
                                </td>
                                <td className="text-right">
-                                   <div className="font-size-sm font-weight-bold">{staff.createdAt}</div>
+                                {student.gender === 'M' ? 'Male': 'Female' }
                                </td>
                                <td className="text-right">
-                                   <div className="font-size-sm font-weight-bold">12.454539 BTC</div>
-                                   <div className="font-size-sm opacity-7">26,349 USD</div>
+                                {student.dob}
+                               </td>
+                               <td className="text-center">
+                                   <Link to={`/classes/${student.id}/students`}><FontAwesomeIcon icon={['far', 'eye']} className="font-size-sm" /> <small>students</small></Link>
                                </td>
                                <td className="text-center">
                                    <Button color="neutral-first" className="mx-1 shadow-none d-30 border-0 p-0 d-inline-flex align-items-center justify-content-center">
-                                       <FontAwesomeIcon icon={['far', 'edit']} className="font-size-sm" />
+                                   <Link to={`/classes/${student.id}/edit`}><FontAwesomeIcon icon={['far', 'edit']} className="font-size-sm" /></Link>
                                    </Button>
                                    <Button color="neutral-danger" className="mx-1 shadow-none d-30 border-0 p-0 d-inline-flex align-items-center justify-content-center">
                                        <FontAwesomeIcon icon={['fas', 'times']} className="font-size-sm" />
                                    </Button>
                                </td>
                            </tr>
-                               ) : <p>No data found in the table</p>
+                               ) : Nodata
                            }
                             <tr className="divider"></tr>
                             
@@ -86,16 +94,13 @@ import { GetAllStaffs } from '../../actions/Staff';
     }
 
     
-    const mapStateToProps = ({ Staff }) => ({
+    const mapStateToProps = ({ Class }) => ({
     
-        staffs: Staff.staffs,
-        isLoading: Staff.isLoading,
-        error: Staff.error,
+        students: Class.students,
+        isLoading: Class.isLoading,
+        error: Class.error,
     })
-    // const mapDispatchToProps = dispatch => bindActionCreators({
-    //     Staffs: GetAllStaffs
-    // }, dispatch)
     
     export default connect(mapStateToProps, {
-        Staffs: GetAllStaffs   
-    })(StaffPage);
+        Students: GetAllStudents
+    })(ClassPage);

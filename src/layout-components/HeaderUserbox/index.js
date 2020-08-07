@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect} from 'react';
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -18,8 +18,23 @@ import JwtDecode from 'jwt-decode';
 
  function HeaderUserbox(){
 
-  const token = localStorage.getItem('smartgate_token')
-    const user = JwtDecode(token)
+    const token = localStorage.getItem('smartgate_token');
+
+  const { school} = token;
+
+  
+
+  function checkToken(){
+    if(!token) {
+      window.location.replace('/login')
+    }
+  }
+  useEffect(() => {
+    checkToken();
+  }, [])
+
+  const user = JwtDecode(token)
+  console.log("data:",user);
     return (
       <Fragment>
         <UncontrolledDropdown className="user-box position-relative ml-2">
