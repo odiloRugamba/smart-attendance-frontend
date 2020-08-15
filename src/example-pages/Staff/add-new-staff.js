@@ -30,16 +30,13 @@ import { AddStaffAction } from '../../actions/Staff'
        }
   return (
       <>
-       <PageTitle
-      titleHeading="Add new staff"
-      titleDescription="Do something that is meaninful"
-      />
+       
           <div className="app-wrapper bg-white min-vh-100">
               <div className="app-main min-vh-100">
               <Form>
               <Container>
                   
-                        <div className="text-uppercase font-weight-bold text-primary pt-4 font-size-sm">User registration Form</div>
+                        <div className="text-uppercase font-weight-bold text-primary pt-4 font-size-sm">Add new staff member</div>
                         <div className="py-4">
                             <Row>
                                 <Col md="6">
@@ -90,8 +87,8 @@ import { AddStaffAction } from '../../actions/Staff'
                             </Row>
                         </div>
                     </Container>
-                    <Container className="d-flex align-items-center ">
-                        <div className="py-4">
+                    <Container className="d-flex align-items-right ">
+                        <div className="py-3">
                             <Button color="success" onClick={handleSubmit} size="lg" className="font-weight-bold">
                                 Save staff
                             </Button>

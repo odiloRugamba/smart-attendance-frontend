@@ -10,7 +10,7 @@ function AddStudent(props) {
 
     const token = localStorage.getItem('smartgate_token');
   const {id} = JwtDecode(token).school
-
+    const classId = props.match.params.id;
     const [firstName, setFirstName] = useState('');
     const [ lastName, setLastName] = useState('');
     const [ gender, setGender] = useState("");
@@ -18,7 +18,6 @@ function AddStudent(props) {
     const [disability, setDisability] = useState('');
     const [villageId, setVillageId] = useState("");
     const [schoolId, setschoolId] = useState(id);
-    const [classId, setclassId] = useState('');
     const [ enrollmentYear, setenrollmentYear] = useState('');
     const [guardianFirstName, setguardianFirstName] = useState('');
     const [ guardianLastName, setguardianLastName] = useState('');
@@ -81,12 +80,7 @@ function AddStudent(props) {
                                         <Label className="font-weight-bold" for="">Disability</Label>
                                         <Input type="text" name="disability" onChange={(e) => setDisability(e.target.value)} id="" placeholder="disability..." />
                                     </FormGroup>
-                                    <Label className="font-weight-bold" for="">Class</Label>
-                                    <Input type="select" name="classId" onChange={(e) => setclassId(e.target.value)} id="exampleSelect">
-                                        <option>select....</option>
-                                        <option value="1">Primary Level</option>
-                                        <option value="2">Ordinary level</option>
-                                    </Input>
+                                    
                                 </Col>
                                 <Col md="6">
                                     <FormGroup>

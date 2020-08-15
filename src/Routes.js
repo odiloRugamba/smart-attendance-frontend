@@ -65,7 +65,7 @@ const Routes = () => {
           </div>
         }>
         <Switch>
-          <Redirect exact from="/" to="/LandingPage" />
+          <Redirect exact from="/" to="/dashboard" />
           <Route path={['/LandingPage',
               '/login', '/forget-password', '/reset', '/welcome']}>
             <PresentationLayout>

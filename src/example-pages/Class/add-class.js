@@ -35,7 +35,7 @@ import { AddClassAction } from '../../actions/Class'
       <>
        <PageTitle
       titleHeading="Add new class"
-      titleDescription="Do something that is meaninful"
+      titleDescription="Please fill all fields"
       />
           <div className="app-wrapper bg-white min-vh-100">
               <div className="app-main min-vh-100">

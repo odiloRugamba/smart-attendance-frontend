@@ -19,6 +19,7 @@ import { GetAllStaffs } from '../../actions/Staff';
     }, [])
 
         const { staffs } = props;
+        console.log("staffs", staffs);
         return (
             <>
 
@@ -28,10 +29,11 @@ import { GetAllStaffs } from '../../actions/Staff';
                             <thead className="thead-light text-capitalize font-size-sm font-weight-bold">
                             <tr>
                                 <th className="text-left px-4">No</th>
-                                <th className="text-left">FirstNae</th>
-                                <th className="text-left">LastName</th>
-                                <th className="text-right">Email</th>
-                                <th className="text-right">Phone</th>
+                                <th className="text-left">First name</th>
+                                <th className="text-left">Last name</th>
+                                <th className="text-left">Email</th>
+                                <th className="text-left">Phone</th>
+                                <th className="text-left">Role</th>
                                 <th className="text-center">Actions</th>
                             </tr>
                             </thead>
@@ -42,24 +44,11 @@ import { GetAllStaffs } from '../../actions/Staff';
                                <td className="px-4">
                                {index+1}
                                </td>
-                               <td className="text-left">
-                                   <div>
-                                       <div className="font-size-sm font-weight-bold">{staff.firstName}</div>
-                                       <div className="font-size-sm opacity-7 text-success d-flex align-items-center">
-                                           {staff.role}
-                                       </div>
-                                   </div>
-                               </td>
-                               <td className="text-right">
-                                {staff.lastName}
-                               </td>
-                               <td className="text-right">
-                                   <div className="font-size-sm font-weight-bold">{staff.createdAt}</div>
-                               </td>
-                               <td className="text-right">
-                                   <div className="font-size-sm font-weight-bold">12.454539 BTC</div>
-                                   <div className="font-size-sm opacity-7">26,349 USD</div>
-                               </td>
+                               <td className="text-left"> {staff.User.firstName} </td>
+                               <td className="text-left"> {staff.User.lastName} </td>
+                               <td className="text-left"> {staff.User.email} </td>
+                               <td className="text-left"> {staff.User.phone} </td>
+                               <td className="text-left"> {staff.role} </td>
                                <td className="text-center">
                                    <Button color="neutral-first" className="mx-1 shadow-none d-30 border-0 p-0 d-inline-flex align-items-center justify-content-center">
                                        <FontAwesomeIcon icon={['far', 'edit']} className="font-size-sm" />

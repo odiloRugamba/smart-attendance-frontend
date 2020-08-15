@@ -40,41 +40,35 @@ const SupersidebarMenuContent = [
           description:
             'A drop-down list is a graphical control element, similar to a list box, that allows the user to choose one value from a list.',
           to: '/AllStaffs'
-        },
-        {
-          label: 'staff report',
-          description:
-            'Navigation menus are one of the basic building blocks for any web or mobile app.',
-          to: '/NavigationMenus'
-        } 
-      ]
-    },
-    {
-      label: 'Students Management',
-      icon: 'pe-7s-users',
-      content: [
-        {
-          label: 'Add a student',
-          description:
-            'Wide selection of cards with multiple styles, borders, actions and hover effects.',
-          to: '/add-student'
-        },
-        {
-          label: 'All students',
-          description:
-            'Wide selection of cards with multiple styles, borders, actions and hover effects.',
-          to: '/All-students'
-        },
-        {
-          label: 'Student report',
-          description:
-            'Wide selection of cards with multiple styles, borders, actions and hover effects.',
-          to: '/Cards3'
         }
       ]
     },
+    // {
+    //   label: 'Students Management',
+    //   icon: 'pe-7s-users',
+    //   content: [
+    //     {
+    //       label: 'Add a student',
+    //       description:
+    //         'Wide selection of cards with multiple styles, borders, actions and hover effects.',
+    //       to: '/add-student'
+    //     },
+    //     {
+    //       label: 'All students',
+    //       description:
+    //         'Wide selection of cards with multiple styles, borders, actions and hover effects.',
+    //       to: '/All-students'
+    //     },
+    //     {
+    //       label: 'Student report',
+    //       description:
+    //         'Wide selection of cards with multiple styles, borders, actions and hover effects.',
+    //       to: '/Cards3'
+    //     }
+    //   ]
+    // },
     {
-      label: 'Class Management',
+      label: 'Students Management',
       icon: 'pe-7s-users',
       content: [
         {
@@ -99,13 +93,13 @@ const SupersidebarMenuContent = [
           label: 'View permissions',
           description:
             'Wide selection of cards with multiple styles, borders, actions and hover effects.',
-          to: '/add-student'
+          to: '/all-permissions'
         },
         {
           label: 'Add  permission',
           description:
             'Wide selection of cards with multiple styles, borders, actions and hover effects.',
-          to: '/All-students'
+          to: '/add-permission'
         }
       ]
     },
@@ -115,17 +109,6 @@ const SupersidebarMenuContent = [
       description:
         'These can be used with other components and elements to create stunning and unique new elements for your UIs.',
       to: '/report'
-    },
-    {
-      label: 'Presentation Blocks',
-      icon: 'pe-7s-box2',
-      content: [
-        {
-          label: 'Landing page',
-          description: '',
-          to: '/LandingPage'
-        }
-      ]
     },
     {
       label: 'My profile',
@@ -175,41 +158,35 @@ const SupersidebarMenuContent = [
           description:
             'A drop-down list is a graphical control element, similar to a list box, that allows the user to choose one value from a list.',
           to: '/AllStaffs'
-        },
-        {
-          label: 'staff report',
-          description:
-            'Navigation menus are one of the basic building blocks for any web or mobile app.',
-          to: '/NavigationMenus'
-        } 
-      ]
-    },
-    {
-      label: 'Students Management',
-      icon: 'pe-7s-users',
-      content: [
-        {
-          label: 'Add a student',
-          description:
-            'Wide selection of cards with multiple styles, borders, actions and hover effects.',
-          to: '/add-student'
-        },
-        {
-          label: 'All students',
-          description:
-            'Wide selection of cards with multiple styles, borders, actions and hover effects.',
-          to: '/All-students'
-        },
-        {
-          label: 'Student report',
-          description:
-            'Wide selection of cards with multiple styles, borders, actions and hover effects.',
-          to: '/Cards3'
         }
       ]
     },
+    // {
+    //   label: 'Students Management',
+    //   icon: 'pe-7s-users',
+    //   content: [
+    //     {
+    //       label: 'Add a student',
+    //       description:
+    //         'Wide selection of cards with multiple styles, borders, actions and hover effects.',
+    //       to: '/add-student'
+    //     },
+    //     {
+    //       label: 'All students',
+    //       description:
+    //         'Wide selection of cards with multiple styles, borders, actions and hover effects.',
+    //       to: '/All-students'
+    //     },
+    //     {
+    //       label: 'Student report',
+    //       description:
+    //         'Wide selection of cards with multiple styles, borders, actions and hover effects.',
+    //       to: '/Cards3'
+    //     }
+    //   ]
+    // },
     {
-      label: 'Class Management',
+      label: 'Students Management',
       icon: 'pe-7s-users',
       content: [
         {
@@ -234,13 +211,13 @@ const SupersidebarMenuContent = [
           label: 'View permissions',
           description:
             'Wide selection of cards with multiple styles, borders, actions and hover effects.',
-          to: '/add-permission'
+          to: '/all-permissions'
         },
         {
           label: 'Add  permission',
           description:
             'Wide selection of cards with multiple styles, borders, actions and hover effects.',
-          to: '/all-permissions'
+          to: '/add-permission'
         }
       ]
     },
@@ -250,17 +227,6 @@ const SupersidebarMenuContent = [
       description:
         'These can be used with other components and elements to create stunning and unique new elements for your UIs.',
       to: '/ListGroups'
-    },
-    {
-      label: 'Presentation Blocks',
-      icon: 'pe-7s-box2',
-      content: [
-        {
-          label: 'Landing page',
-          description: '',
-          to: '/LandingPage'
-        }
-      ]
     },
     {
       label: 'My profile',
@@ -287,47 +253,36 @@ const SupersidebarMenuContent = [
       to: '/dashboard'
   
     },
-    {
-      label: 'Manage students',
-      icon: 'pe-7s-users',
-      content: [
-        {
-          label: 'Add a student',
-          description:
-            'Wide selection of cards with multiple styles, borders, actions and hover effects.',
-          to: '/add-student'
-        },
-        {
-          label: 'All students',
-          description:
-            'Wide selection of cards with multiple styles, borders, actions and hover effects.',
-          to: '/All-students'
-        },
-        {
-          label: 'Student report',
-          description:
-            'Wide selection of cards with multiple styles, borders, actions and hover effects.',
-          to: '/Cards3'
-        }
-      ]
-    },
+    // {
+    //   label: 'Manage students',
+    //   icon: 'pe-7s-users',
+    //   content: [
+    //     {
+    //       label: 'Add a student',
+    //       description:
+    //         'Wide selection of cards with multiple styles, borders, actions and hover effects.',
+    //       to: '/add-student'
+    //     },
+    //     {
+    //       label: 'All students',
+    //       description:
+    //         'Wide selection of cards with multiple styles, borders, actions and hover effects.',
+    //       to: '/All-students'
+    //     },
+    //     {
+    //       label: 'Student report',
+    //       description:
+    //         'Wide selection of cards with multiple styles, borders, actions and hover effects.',
+    //       to: '/Cards3'
+    //     }
+    //   ]
+    // },
     {
       label: 'General Report',
       icon: 'pe-7s-id',
       description:
         'These can be used with other components and elements to create stunning and unique new elements for your UIs.',
       to: '/ListGroups'
-    },
-    {
-      label: 'Presentation Blocks',
-      icon: 'pe-7s-box2',
-      content: [
-        {
-          label: 'Landing page',
-          description: '',
-          to: '/LandingPage'
-        }
-      ]
     },
     {
       label: 'My profile',

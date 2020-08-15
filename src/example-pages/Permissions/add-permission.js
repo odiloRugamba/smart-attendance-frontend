@@ -3,72 +3,70 @@ import { connect } from 'react-redux';
 import { Row, Col, FormGroup, Input, Button, Label, Container, Form } from 'reactstrap';
 import { PageTitle } from '../../layout-components';
 import {AddSchoolAction} from '../../actions/School'
+import { createPermission } from 'actions/Permission';
 
-  function AddSchool(props) {
+  function CreatePermission(props) {
 
-    const [headFirstName, setheadFirstName] = useState('');
-    const [headLastName, setheadLastName] = useState('');
-    const [headEmail, setHeadEmail] = useState('');
-    const [headPhone, setheadPhone] = useState('');
-    const [schoolName, setschoolName] = useState('');
-    const [schoolPhone, setschoolPhone] = useState('');
-    const [schoolEmail, setschoolEmail] = useState('');
-    const [schoolAddress, setschoolAddress] = useState('');
-    const [villageId, setSchoolvillageId] = useState('');
-
+    const [leavingTime, setleavingTime] = useState('');
+    const [expectedBackTime, setexpectedBackTime] = useState('');
+    const [reason, setreason] = useState('');
+    const [requesterName, setrequesterName] = useState('');
+    const [requesterPhone, setrequesterPhone] = useState('');
+    const [requesterRelationship, setrequesterRelationship] = useState('');
+    const [studentId, setstudentId] = useState('1');
+    const [schoolId, setschoolId] = useState('1');
+   
    const  handleSubmit = async (e) =>{
+       console.log("submit...")
      e.preventDefault();
-     const { School } = props;
-     await  School({
-         headFirstName,
-         headLastName,
-         headEmail,
-         headPhone,
-         schoolName,
-         schoolEmail,
-         schoolPhone,
-         schoolAddress,
-         villageId,
-     })
+     const { createPermission } = props;
+     await  createPermission({
+         leavingTime,
+         expectedBackTime,
+         reason,
+         requesterName,
+         requesterPhone,
+         studentId,
+         requesterRelationship,
+         schoolId,
+     });
+     console.log("submited")
+     console.log(leavingTime);
     }
   return (
       <>
-       <PageTitle
-      titleHeading="School registration Form"
-      titleDescription="Do something that is meaninful"
-      />
           <div className="app-wrapper bg-white min-vh-100">
               <div className="app-main min-vh-100">
               <Form>
               <Container>
                   
-                        <div className="text-uppercase font-weight-bold text-primary pt-4 font-size-sm">School registration Form</div>
+                        <div className="text-uppercase font-weight-bold text-primary pt-4 font-size-sm">Issue a new permission</div>
                         <div className="py-4">
                             <Row>
                                 <Col md="6">
                                     <FormGroup>
-                                        <Label className="font-weight-bold" for="">Headmaster FirstName</Label>
-                                        <Input type="text" name="headFirstName" onChange={(e) => setheadFirstName(e.target.value)} id="" placeholder="First name..." />
+                                        <Label className="font-weight-bold" for="">leaving time</Label>
+                                        <Input type="date" name="leavingTime" onChange={(e) => setleavingTime(e.target.value)} id="" />
                                     </FormGroup>
-                                    <Label className="font-weight-bold" for="">Headmaster LastName</Label>
-                                    <Row>
-                                        <Col md="12">
-                                            <FormGroup>
-                                                <Input type="text" name="headLastName" onChange={(e) => setheadLastName(e.target.value)} id="" placeholder="last name..." />
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                </Col>
+                                    </Col>
                                 <Col md="6">
                                     <FormGroup>
-                                        <Label className="font-weight-bold" for="">Headmaster Email</Label>
-                                        <Input type="text" name="headEmail" onChange={(e) => setHeadEmail(e.target.value)} id="" placeholder="Last name ..." />
+                                        <Label className="font-weight-bold" for="">Expected return time</Label>
+                                        <Input type="date" name="expectedBackTime" onChange={(e) => setexpectedBackTime(e.target.value)} id="" />
                                     </FormGroup>
-                                    <Label className="font-weight-bold" for="">Mobile phone</Label>
+                                </Col>
+                                <Col md="12">
+                                    <FormGroup>
+                                        <Label className="font-weight-bold" for="">Reason</Label>
+                                        <Input type="textarea" name="reason" onChange={(e) => setreason(e.target.value)} id="" placeholder="Reason..." />
+                                    </FormGroup>
+                                </Col>
+                                <Col md="12">
+                                    <Label className="font-weight-bold" for="">Requester name</Label>
                                     <Row>
                                         <Col md="12">
                                             <FormGroup>
-                                                <Input type="text" name="headPhone" onChange={(e) => setheadPhone(e.target.value)} id="" placeholder="Number..." />
+                                                <Input type="text" name="requesterName" onChange={(e) => setrequesterName(e.target.value)} id="" placeholder="Full name..." />
                                             </FormGroup>
                                         </Col>
                                     </Row>
@@ -77,43 +75,14 @@ import {AddSchoolAction} from '../../actions/School'
                             <Row>
                             <Col md="6">
                                     <FormGroup>
-                                        <Label className="font-weight-bold" for="">School Name</Label>
-                                        <Input type="text" name="schoolName" id="" onChange={(e) => setschoolName(e.target.value)} placeholder="school name..." />
+                                        <Label className="font-weight-bold" for="">Requester phone number</Label>
+                                        <Input type="text" name="requesterPhone" id="" onChange={(e) => setrequesterPhone(e.target.value)} placeholder="07..." />
                                     </FormGroup>
-                                    <Label className="font-weight-bold" for="">School Email</Label>
-                                    <Row>
-                                        <Col>
-                                            <FormGroup>
-                                                <Input type="text" name="schoolEmail" onChange={(e) => setschoolEmail(e.target.value)} id="" placeholder="school email..." />
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
                                 </Col>
                                 <Col md="6">
-                                    <Label className="font-weight-bold" for="">Village</Label>
-                                    <Row>
-                                     <Col md="12">
-                                        <FormGroup>
-                                        <Input type="select" name="villageId" onChange={(e) => setSchoolvillageId(e.target.value)} id="exampleSelect">
-                                            <option value="1">kayonza</option>
-                                            <option value="2">Ijyosi</option>
-                                            <option  value="3">Mukanogo</option>
-                                        </Input>
-                                        </FormGroup>
-                                        </Col>
-                                    </Row>
                                     <FormGroup>
-                                        <Label className="font-weight-bold" for="">School Phone Number</Label>
-                                        <Input type="text" name="schoolName" id="" onChange={(e) => setschoolPhone(e.target.value)} placeholder="school name..." />
-                                    </FormGroup>
-                                
-                                </Col>
-                            </Row>
-                            <Label className="font-weight-bold" for="">School Address</Label>
-                            <Row>
-                                <Col col="12">
-                                    <FormGroup>
-                                        <Input type="text" name="schoolAddress" onChange={(e) => setschoolAddress(e.target.value)} id="" placeholder="school address..." />
+                                        <Label className="font-weight-bold" for="">Requester relationship with the student</Label>
+                                        <Input type="text" name="requesterPhone" id="" onChange={(e) => setrequesterRelationship(e.target.value)} placeholder="Mother..." />
                                     </FormGroup>
                                 </Col>
                             </Row>
@@ -123,7 +92,7 @@ import {AddSchoolAction} from '../../actions/School'
                     <Container className="d-flex align-items-center ">
                         <div className="py-4">
                             <Button color="success" onClick={handleSubmit} size="lg" className="font-weight-bold">
-                                Save school
+                                Submit
                             </Button>
                         </div>
                     </Container>
@@ -141,5 +110,5 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, {
-    School: AddSchoolAction
-})(AddSchool);
+    createPermission: createPermission
+})(CreatePermission);

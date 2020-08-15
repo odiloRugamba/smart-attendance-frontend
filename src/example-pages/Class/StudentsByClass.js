@@ -25,7 +25,6 @@ import {  GetAllStudents } from '../../actions/Class';
 
         const Nodata = isLoading ? <div><Spinner /> </div> : <div>
             <p>No registered students in this class</p>
-            <Button color="second" className="align-items-center white justify-content-center"><Link to={`/classes/${ClassId}/add-student`}>Add class member</Link></Button>
         </div>  
         return (
             <>
@@ -66,7 +65,7 @@ import {  GetAllStudents } from '../../actions/Class';
                                 {student.dob}
                                </td>
                                <td className="text-center">
-                                   <Link to={`/classes/${student.id}/students`}><FontAwesomeIcon icon={['far', 'eye']} className="font-size-sm" /> <small>students</small></Link>
+                                   <Link to={`/classes/${student.id}/students`}><FontAwesomeIcon icon={['far', 'eye']} className="font-size-sm" /> <small>more</small></Link>
                                </td>
                                <td className="text-center">
                                    <Button color="neutral-first" className="mx-1 shadow-none d-30 border-0 p-0 d-inline-flex align-items-center justify-content-center">
@@ -83,10 +82,13 @@ import {  GetAllStudents } from '../../actions/Class';
                             
                             </tbody>
                         </Table>
+                        
                     </div>
                     <div className="mt-3" />
+                    
                     <div className="card-footer bg-secondary p-4 d-flex justify-content-center">
-          
+                    <Button color="second" className="align-items-center white justify-content-center"><Link to={`/classes/${ClassId}/add-student`}>Add new student</Link></Button>
+        
                     </div>
                 </Card>
             </>

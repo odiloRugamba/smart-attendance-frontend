@@ -38,7 +38,7 @@ import { GetAllClassess } from '../../actions/Class';
                                 <th className="text-right">Combination</th>
                                 <th className="text-right">Label</th>
                                 <th className="text-center">View</th>
-                                <th className="text-center">Actions</th>
+                                {/* <th className="text-center">Actions</th> */}
                             </tr>
                             </thead>
                             <tbody>
@@ -65,14 +65,14 @@ import { GetAllClassess } from '../../actions/Class';
                                <td className="text-center">
                                    <Link to={`/classes/${Class.id}/students`}><FontAwesomeIcon icon={['far', 'eye']} className="font-size-sm" /> <small>students</small></Link>
                                </td>
-                               <td className="text-center">
+                               {/* <td className="text-center">
                                    <Button color="neutral-first" className="mx-1 shadow-none d-30 border-0 p-0 d-inline-flex align-items-center justify-content-center">
                                    <Link to={`/classes/${Class.id}/edit`}><FontAwesomeIcon icon={['far', 'edit']} className="font-size-sm" /></Link>
                                    </Button>
                                    <Button color="neutral-danger" className="mx-1 shadow-none d-30 border-0 p-0 d-inline-flex align-items-center justify-content-center">
                                        <FontAwesomeIcon icon={['fas', 'times']} className="font-size-sm" />
                                    </Button>
-                               </td>
+                               </td> */}
                            </tr>
                                ) : Nodata
                            }
